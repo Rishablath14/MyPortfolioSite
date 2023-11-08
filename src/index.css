@@ -47,7 +47,7 @@ h4::selection{color: #ffffe0;background-color: rgba(10,20,30,0.2);}
 .preloader {
     height: 100vh;
     width: 100%;
-    background: rgb(21, 22, 22);
+    background: rgb(31, 32, 32);
     position: fixed;
     bottom: 0;
     left: 0;

@@ -37,14 +37,12 @@ const LeftBanner = () => {
             Find me in
           </h2>
           <div className="flex gap-4">
-          <a href='https://www.facebook.com/rishablath.14/' target="blank"> <span className="bannerIcon">
-            <FaFacebookF /> </span> </a>
           <a href='https://www.instagram.com/rishablath.14/' target="blank"> <span className="bannerIcon">
             <FaInstagram /> </span> </a>
           <a href='https://www.linkedin.com/in/rishab-lath/' target="blank"> <span className="bannerIcon">
             <FaLinkedinIn /> </span> </a>
-          <a href='Rishab_Lath_Resume.pdf' download> <span className="bannerIcon text-white">
-            <GrDocumentDownload /> </span> </a>
+          <a href='Rishab_Lath_Resume.pdf' download> <span className="bannerIcon">
+            <GrDocumentDownload color="white" /> </span> </a>
           </div>
         </div>
         <div>

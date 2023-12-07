@@ -45,7 +45,7 @@ const Navbar = () => {
         </span>
 <AnimatePresence>
         {showMenu && (
-          <motion.div initial={{x:"-100%",opacity:0}} transition={{ type: "spring", stiffness: 10 }} animate={{x:0,opacity:1}} exit={{x:"-100%",opacity:0}} className="w-[100%] h-screen overflow-scroll absolute top-0 left-[-15px] bg-[#191b1e] p-10 scrollbar-hide">
+          <motion.div initial={{x:"-100%",opacity:0}} transition={{ type: "spring", stiffness: 40 }} animate={{x:0,opacity:1}} exit={{x:"-100%",opacity:0}} className="w-[100%] h-screen overflow-scroll absolute top-0 left-[-15px] bg-[#191b1e] p-10 scrollbar-hide">
             <div className="flex flex-col gap-8 py-2 relative">
               <div>
                 <img loading="eager" className="w-32" src={logo} alt="logo" />

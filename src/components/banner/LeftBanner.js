@@ -43,7 +43,7 @@ const LeftBanner = () => {
             <FaInstagram /> </span> </a>
           <a href='https://www.linkedin.com/in/rishab-lath/' target="blank"> <span className="bannerIcon">
             <FaLinkedinIn /> </span> </a>
-          <a href='Rishab_lath_Resume' download> <span className="bannerIcon">
+          <a href='Rishab_Lath_Resume.pdf' download> <span className="bannerIcon">
             <GrDocumentDownload /> </span> </a>
           </div>
         </div>

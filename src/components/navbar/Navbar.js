@@ -4,7 +4,7 @@ import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import {logo} from "../../assets/index"
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll,AnimatePresence } from "framer-motion";
 import { navLinksdata } from '../../constants';
 
 const Navbar = () => {
@@ -43,8 +43,9 @@ const Navbar = () => {
         >
           <FiMenu />
         </span>
+<AnimatePresence>
         {showMenu && (
-          <div className="w-[100%] h-screen overflow-scroll absolute top-0 left-[-15px] bg-[#191b1e] p-10 scrollbar-hide">
+          <motion.div initital={{x:"-100%"}} transition={{ ease: "easeOut", duration: 1 }} animate={{x:0}} exit={{x:"-100%"}} className="w-[100%] h-screen overflow-scroll absolute top-0 left-[-15px] bg-[#191b1e] p-10 scrollbar-hide">
             <div className="flex flex-col gap-8 py-2 relative">
               <div>
                 <img className="w-32" src={logo} alt="logo" />
@@ -92,8 +93,9 @@ const Navbar = () => {
                 <MdClose />
               </span>
             </div>
-          </div>
+          </motion.div>
         )}
+      </AnimatePresence>
       </div>
     </div>
   </>

@@ -31,7 +31,7 @@ const LeftBanner = () => {
         An articulate and quick thinking Computer Science Engineering Student with a natural flair to communicate and build relationships online with problem-solving skills. I am Passionate about designing, developing, implementing and launching new projects. Ability to translate business requirements into technical solutions.
         </p>
       </div>
-      <div className="flex flex-col xl:flex-row gap-6 lgl:gap-0 justify-between">
+      <div className="flex flex-col xl:flex-row gap-6 xl:gap-2 justify-between">
         <div>
           <h2 className="text-base uppercase font-titleFont mb-4">
             Find me in
@@ -43,7 +43,7 @@ const LeftBanner = () => {
             <FaInstagram /> </span> </a>
           <a href='https://www.linkedin.com/in/rishab-lath/' target="blank"> <span className="bannerIcon">
             <FaLinkedinIn /> </span> </a>
-          <a href='Rishab_Lath_Resume.pdf' download> <span className="bannerIcon">
+          <a href='Rishab_Lath_Resume.pdf' download> <span className="bannerIcon text-white">
             <GrDocumentDownload /> </span> </a>
           </div>
         </div>

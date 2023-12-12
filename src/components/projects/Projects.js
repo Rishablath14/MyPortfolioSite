@@ -1,6 +1,6 @@
 import React from 'react'
 import Title from '../layouts/Title'
-import { projectOne,projectTwo,projectThree,projectFour } from "../../assets/index";
+import { projectOne,projectTwo,projectThree,projectFour,projectFive } from "../../assets/index";
 import ProjectsCard from './ProjectsCard';
 
 const Projects = () => {
@@ -16,6 +16,12 @@ const Projects = () => {
         />
       </div>
        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 xl:gap-14">
+       <ProjectsCard
+          title="Strike Meida Webiste"
+          des="Welcome to the digital canvas of Strikemedia. As a developer, I proudly present this design studio's website, where every line of code is a brushstroke, and every animation is a masterpiece powered by GSAP with the fusion of code and creativity! The user-friendly interface is a testament to the coding prowess, making navigation intuitive and delightful. Beyond the visual spectacle, this website is engineered for success in the digital arena. With SEO optimization at its core, each project is strategically positioned to shine in search engine rankings, ensuring maximum visibility for the work."
+          src={projectFive}
+          link={"https://www.strikemedia.in"}
+        />
        <ProjectsCard
           title="Oriental Detective Website"
           des="This SEO Optmized and user-friendly Detective Agency Website, serves as the digital gateway to our world of investigative expertise. The site has been designed and developed with a focus on user experience, ensuring that clients and visitors can easily navigate and access the vital information they seek. We understand the importance of trust in our line of work, which is why the website showcases our commitment to confidentiality, perfection and professionalism. Additionally, the 'Contact Us' page allows visitors to reach out with ease, enabling swift and confidential communication."

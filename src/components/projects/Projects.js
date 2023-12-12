@@ -17,7 +17,7 @@ const Projects = () => {
       </div>
        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 xl:gap-14">
        <ProjectsCard
-          title="Strike Meida Webiste"
+          title="Strike Meida Website"
           des="Welcome to the digital canvas of Strikemedia. As a developer, I proudly present this design studio's website, where every line of code is a brushstroke, and every animation is a masterpiece powered by GSAP with the fusion of code and creativity! The user-friendly interface is a testament to the coding prowess, making navigation intuitive and delightful. Beyond the visual spectacle, this website is engineered for success in the digital arena. With SEO optimization at its core, each project is strategically positioned to shine in search engine rankings, ensuring maximum visibility for the work."
           src={projectFive}
           link={"https://www.strikemedia.in"}

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaReact } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaReact,Facopy } from "react-icons/fa";
 import { GrDocumentDownload } from "react-icons/gr";
 import { SiTailwindcss, SiNodedotjs, SiJava} from "react-icons/si";
 
@@ -42,7 +42,7 @@ const LeftBanner = () => {
           <a href='https://www.linkedin.com/in/rishab-lath/' target="blank"> <span className="bannerIcon">
             <FaLinkedinIn /> </span> </a>
           <a href='Rishab_Lath_Resume.pdf' download> <span className="bannerIcon">
-            <GrDocumentDownload color="white" /> </span> </a>
+            <FaCopy /> </span> </a>
           </div>
         </div>
         <div>

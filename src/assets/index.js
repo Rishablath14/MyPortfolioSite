@@ -4,6 +4,7 @@ import projectOne from "./images/dmapinfotech.webp";
 import projectTwo from "./images/ardiginet.webp";
 import projectThree from "./images/GAFNGO.webp";
 import projectFour from "./images/orientaldetective.webp";
+import projectFive from "./images/StrikeMedia.webp";
 import contactImg from "./images/contact/contactImg.png";
 
 export {
@@ -13,5 +14,6 @@ export {
   projectTwo,
   projectThree,
   projectFour,
+  projectFive,
   contactImg,
 };

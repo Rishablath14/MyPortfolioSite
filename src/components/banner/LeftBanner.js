@@ -29,6 +29,15 @@ const LeftBanner = () => {
         <p className="text-justify font-bodyFont leading-6 tracking-wide">
         An articulate and quick thinking Computer Science Engineering Student with a natural flair to communicate and build relationships online with problem-solving skills. I am Passionate about designing, developing, implementing and launching new projects. Ability to translate business requirements into technical solutions.
         </p>
+        <div>
+          <h2 className="text-base uppercase font-titleFont mb-4">
+            My Resume
+          </h2>
+          <div className="flex gap-2">
+          <a href='Rishab_Lath_Resume.pdf' download> <span className="bannerIcon">
+            <FaCopy /> </span> </a>
+          </div>
+        </div>                
       </div>
       <div className="flex flex-col xl:flex-row gap-6 xl:gap-2 justify-between">
         <div>
@@ -42,15 +51,6 @@ const LeftBanner = () => {
             <FaLinkedinIn /> </span> </a>
           <a href='https://www.facebook.com/rishablath.14/' target="blank"> <span className="bannerIcon">
             <FaFacebookF /> </span> </a>
-          </div>
-        </div>
-        <div>
-          <h2 className="text-base uppercase font-titleFont mb-4">
-            My Resume
-          </h2>
-          <div className="flex gap-2">
-          <a href='Rishab_Lath_Resume.pdf' download> <span className="bannerIcon">
-            <FaCopy /> </span> </a>
           </div>
         </div>
         <div>

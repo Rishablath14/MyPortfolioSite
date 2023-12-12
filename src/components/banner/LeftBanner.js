@@ -40,6 +40,15 @@ const LeftBanner = () => {
             <FaInstagram /> </span> </a>
           <a href='https://www.linkedin.com/in/rishab-lath/' target="blank"> <span className="bannerIcon">
             <FaLinkedinIn /> </span> </a>
+          <a href='https://www.facebook.com/rishablath.14/' target="blank"> <span className="bannerIcon">
+            <FaFacebookF /> </span> </a>
+          </div>
+        </div>
+        <div>
+          <h2 className="text-base uppercase font-titleFont mb-4">
+            My Resume
+          </h2>
+          <div className="flex gap-2">
           <a href='Rishab_Lath_Resume.pdf' download> <span className="bannerIcon">
             <FaCopy /> </span> </a>
           </div>

@@ -4,9 +4,9 @@ import Contact from "./components/contact/Contact";
 import Features from "./components/features/Features";
 import FooterBottom from "./components/footer/FooterBottom";
 import Navbar from "./components/navbar/Navbar";
-// import Projects from "./components/projects/Projects";
+import Projects from "./components/projects/Projects";
 import Resume from "./components/resume/Resume";
-import Preloader from "./components/Preloader";
+// import Preloader from "./components/Preloader";
 
 function App() {
   return (

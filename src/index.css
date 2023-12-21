@@ -56,12 +56,12 @@
 #line1{
   stroke-dasharray: 700;
   stroke-dashoffset: 700;
-  animation: svg 2s ease-out infinite;
+  animation: svg 2.5s ease-out infinite;
 }
 #line2{
   stroke-dasharray: 2800;
   stroke-dashoffset: 2800;
-  animation: svg 2s ease-out;
+  animation: svg 2.5s ease-out infinite;
 }
 
 @keyframes svg {

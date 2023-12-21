@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react'
-import { preLoaderAnim } from '../animations';
+// import { preLoaderAnim } from '../animations';
 
 const Preloader = () => {
     useEffect(() => {
-        preLoaderAnim();
-        setTimeout(()=>{document.body.style.overflowY = "scroll";},2500)
+        document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(function() {
+        document.querySelector(".preloader").style.display = "none" ;
+  }, 10)
+});
       }, []);
       return (
         <div className="preloader">

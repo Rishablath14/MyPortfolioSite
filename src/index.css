@@ -3,14 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 ::-webkit-scrollbar{display: none;}
-body{overflow-y: hidden;}
-p::selection{color: #ffffe0;background-color: rgba(10,20,30,0.2);}
-span::selection{color: #ffffe0;background-color: rgba(10,20,30,0.2);}
-h1::selection{color: #ffffe0;background-color: rgba(10,20,30,0.2);}
-h2::selection{color: #ffffe0;background-color: rgba(10,20,30,0.2);}
-div::selection{color: #ffffe0;background-color: rgba(10,20,30,0.2);}
-h3::selection{color: #ffffe0;background-color: rgba(10,20,30,0.2);}
-h4::selection{color: #ffffe0;background-color: rgba(10,20,30,0.2);}
+::selection{color: #ffffe0;background-color: rgba(10,20,30,0.2);}
 @layer components{
     .bannerIcon{
         @apply w-16 h-16 bg-black bg-opacity-25 text-gray-200 text-xl inline-flex items-center justify-center rounded-md shadow-shadowOne hover:bg-opacity-40 hover:-translate-y-1 transition-all hover:text-designColor cursor-pointer duration-300;
@@ -47,8 +40,8 @@ h4::selection{color: #ffffe0;background-color: rgba(10,20,30,0.2);}
 .preloader {
     height: 100vh;
     width: 100%;
-    box-shadow: inset 0px 0px 50px 5px rgb(54, 54, 54);
-    background: rgb(31, 32, 32);
+    box-shadow: inset 0px 0px 50px 5px #212020;
+    background: #2b2c2c;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -57,30 +50,7 @@ h4::selection{color: #ffffe0;background-color: rgba(10,20,30,0.2);}
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    overflow: hidden !important;}
+    color: #ff014f;
+    overflow: hidden !important;
+}
 
-    .preloader .texts-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        height: 60px;
-        width: 100%;
-        font-size: 40px;
-        overflow: hidden;
-        font-weight: 800;
-        opacity: 0;
-        color: white;
-    }
-    @media screen and (max-width:991px) {
-        .preloader .texts-container{
-        font-size: 28px;
-     }}
-
-    @media screen and (max-width:778px) {
-        .preloader .texts-container{
-         flex-direction: column;   
-         height: 500px;
-        font-size: 32px;
-     }
-    }

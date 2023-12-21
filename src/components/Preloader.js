@@ -4,7 +4,7 @@ import { preLoaderAnim } from '../animations';
 const Preloader = () => {
     useEffect(() => {
         preLoaderAnim();
-        setTimeout(()=>{document.body.style.overflowY = "scroll";},4500)
+        setTimeout(()=>{document.body.style.overflowY = "scroll";},2500)
       }, []);
       return (
         <div className="preloader">

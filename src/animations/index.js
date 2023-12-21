@@ -8,6 +8,7 @@ export const preLoaderAnim = () => {
       ".preloader",
       {
         duration: 0.5,
+        delay:2.2,
         display:"none",
         ease: "Power3.easeOut",
       })

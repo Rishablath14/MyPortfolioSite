@@ -53,4 +53,19 @@
     color: #ff014f;
     overflow: hidden !important;
 }
+#line1{
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  animation: svg 2s ease-out infinite;
+}
+#line2{
+  stroke-dasharray: 2800;
+  stroke-dashoffset: 2800;
+  animation: svg 2s ease-out;
+}
 
+@keyframes svg {
+  100%{
+    stroke-dashoffset: 0;
+  }
+}

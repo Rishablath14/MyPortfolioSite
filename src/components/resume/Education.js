@@ -55,7 +55,7 @@ const Education = () => {
         <div className="w-full h-[400px] border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">
           <JobResumeCard
             title="Website Development"
-            subTitle="FREELANCING - ( July 2023 )"
+            subTitle="FREELANCING - ( July 2023 - present )"
             result="INDORE"
             des="I have created a different sectors website like Digital Marketing Agency, NGO, Chemical Industries and more using HTML, CSS, Tailwind CSS, JavaScript, Jquery, Nextjs, Vitejs and also used Three.js, Framer Motion & GSAP animations, Swiper Effects and Slick carousel for making a dynamic and completely responsive animated webiste with backend connectivity using PHP and MySQL."
           />

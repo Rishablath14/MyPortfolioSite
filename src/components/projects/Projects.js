@@ -1,7 +1,7 @@
 import React from 'react'
 import Title from '../layouts/Title'
-import { projectOne,projectTwo,projectThree,projectFour,projectFive } from "../../assets/index";
-import ProjectsCard from './ProjectsCard';
+import { projectOne,projectTwo,projectThree,projectFour,projectFive,projectSix,projectSeven } from "../../assets/index";
+import ProjectsCard from './ProjectsCard'; 
 
 const Projects = () => {
   return (
@@ -16,6 +16,18 @@ const Projects = () => {
         />
       </div>
        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 xl:gap-14">
+        <ProjectsCard
+          title="Bru Speciality Chemicals Website"
+          des="I created a stunning website for BRU Speciality Chemicals, a leading manufacturer of aroma chemicals for various industries. The website showcases the company's expertise, quality, and innovation in producing a wide range of aroma chemicals. I used NEXTjs, a React framework, to build a fast, scalable, and SEO-friendly website that delivers an amazing user experience. I also added dynamic and interactive elements to the website using Framer motion, a library for animations. I followed SEO best practices, such as optimizing the site speed, structure, and content, to boost the website's ranking."
+          src={projectSeven}
+          link={"https://www.bruorg.com"}
+        />    
+        <ProjectsCard
+          title="Valfom Industries Website"
+          des="I designed and developed this website for Valfom Industries, a leading supplier of flavours, fragrances, and essential oils. The website showcases the company's products, services, and values, and provides an engaging user experience. I used Vite js, HTML, CSS, and JS to create a fast, responsive, and modern website, and applied GSAP for eye-catching animations to enhance the visual appeal. I also implemented SEO best practices, such as writing concise meta descriptions, using relevant keywords, and creating clear headings, to increase the website's visibility and ranking on search engines."
+          src={projectSix}
+          link={"https://www.valfom.net"}
+        />    
        <ProjectsCard
           title="Strike Meida Website"
           des="Welcome to the digital canvas of Strikemedia. As a developer, I proudly present this design studio's website, where every line of code is a brushstroke, and every animation is a masterpiece powered by GSAP with the fusion of code and creativity! The user-friendly interface is a testament to the coding prowess, making navigation intuitive and delightful. Beyond the visual spectacle, this website is engineered for success in the digital arena. With SEO optimization at its core, each project is strategically positioned to shine in search engine rankings, ensuring maximum visibility for the work."

@@ -57,7 +57,7 @@ const Education = () => {
             title="Website Development"
             subTitle="FREELANCING - ( July 2023 )"
             result="INDORE"
-            des="I have created a different sectors website like Digital Marketing Agency, NGO, Detective Agency and more using HTML, CSS, JavaScript, Jquery and also used Three.js & GSAP animations, Swiper Effects and Slick carousel for making a dynamic and completely responsive animated webiste with backend connectivity using PHP and MySQL."
+            des="I have created a different sectors website like Digital Marketing Agency, NGO, Chemical Industries and more using HTML, CSS, Tailwind CSS, JavaScript, Jquery, Nextjs, Vitejs and also used Three.js, Framer Motion & GSAP animations, Swiper Effects and Slick carousel for making a dynamic and completely responsive animated webiste with backend connectivity using PHP and MySQL."
           />
         </div>
       </div>

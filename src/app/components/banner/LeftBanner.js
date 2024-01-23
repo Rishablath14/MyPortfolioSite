@@ -1,6 +1,7 @@
 "use client"
 import Typewriter from 'typewriter-effect';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaReact,FaCopy } from "react-icons/fa";
+import { FaJava } from "react-icons/fa6";
 import { SiTailwindcss, SiNodedotjs} from "react-icons/si";
 
 const LeftBanner = () => {
@@ -58,9 +59,9 @@ const LeftBanner = () => {
             <span className="bannerIcon">
               <FaReact />
             </span>
-            {/* <span className="bannerIcon">
-              <SiJava />
-            </span> */}
+            <span className="bannerIcon">
+              <FaJava />
+            </span>
             <span className="bannerIcon">
               <SiTailwindcss />
             </span>

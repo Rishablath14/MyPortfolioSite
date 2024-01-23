@@ -1,3 +1,0 @@
-User-agent: *
-Disallow:
-Sitemap: https://rishablathportfolio.netlify.app/sitemap.xml

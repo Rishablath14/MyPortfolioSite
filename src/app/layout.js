@@ -6,7 +6,7 @@ const jsonLd = {
     "name": "Rishab Lath",
     "jobTitle": "Website Developer, Digital Marketer, and Java Programmer",
     "description": "Hyy! I'm Rishab Lath, a freelancer in Website development, Digital marketing, and Java programming. Explore my work and discover how we can bring your digital projects to life.",
-    "url": "https://rishablathportfolio.netlify.app/",
+    "url": "https://rishablathportfolio.netlify.app",
     "contactPoint": [
       {
         "@type": "ContactPoint",

@@ -39,7 +39,7 @@ export const metadata = {
   description: "Hyy! I'm Rishab Lath, a freelancer in website development, digital marketing, and Java programming. Explore my work and discover how I can bring your digital projects to life.",
   metadataBase: new URL('https://rishablathportfolio.netlify.app'),
   alternates: {
-    canonical: 'https://rishablathportfolio.netlify.app/',
+    canonical: 'https://rishablathportfolio.netlify.app',
   },
   twitter: {
     card: "Rishab Lath Website",

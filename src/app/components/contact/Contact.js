@@ -21,7 +21,7 @@ const Contact = () => {
     } else if (userEmail === "") {
       setErrMsg("Please give your Email!");
     } else if (subject === "") {
-      setErrMsg("Plese give your Subject!");
+      setErrMsg("Please give your Subject!");
     } else if (message === "") {
       setErrMsg("Message is required!");
     } else {

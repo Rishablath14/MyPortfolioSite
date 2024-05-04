@@ -5,10 +5,12 @@ import FooterBottom from "./components/footer/FooterBottom";
 import Navbar from "./components/navbar/Navbar";
 import Projects from "./components/projects/Projects";
 import Resume from "./components/resume/Resume";
-// import Preloader from "./components/Preloader";
+import Preloader from "./components/Preloader";
 
 function App() {
   return (
+    <>
+    <Preloader/>
     <div className="w-full h-auto bg-bodyColor text-lightText">
         <Navbar />
       <div className="max-w-screen-xl mx-auto px-4">
@@ -20,6 +22,7 @@ function App() {
         <FooterBottom />
       </div>
     </div>
+    </>
   );
 }
 

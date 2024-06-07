@@ -40,13 +40,15 @@ const Contact = () => {
     })
 })
     .then(response => response.json())
-    .then(data => {console.log(data);if(data.success){setSuccessMsg(
+    .then(data => {console.log(data)});
+    .catch(error => {console.log(error)});
+      // setErrMsg("Message Sending Fail!");}               
+      // setErrMsg("");
+      setSuccessMsg(
       `Thank you dear ${username}, Your Messages has been sent Successfully!`)}
     setTimeout(() => {
         setSuccessMsg("");
-         }, 3000);})
-    .catch(error => {console.log(error);setErrMsg("Message Sending Fail!");});
-      setErrMsg("");
+         }, 3000);
       setUsername("");
       setPhoneNumber("");
       setEmail("");

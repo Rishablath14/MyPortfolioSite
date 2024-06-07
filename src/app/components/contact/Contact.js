@@ -27,7 +27,6 @@ const Contact = () => {
     } else {
       fetch("https://formsubmit.co/ajax/reshablath@gmail.com", {
     method: "POST",
-    mode: 'no-cors',
     headers: { 
         'Content-Type': 'application/json',
         'Accept': 'application/json'

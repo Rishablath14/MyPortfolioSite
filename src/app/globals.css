@@ -40,8 +40,8 @@
 }
 .infinite-scroll3{
     display: flex;
-    animation-delay: 0.5s;
     animation: infinite-scroll 10s linear infinite;
+    animation-delay: 2s;
 }
 .infinite-scroll2{
     display: flex;

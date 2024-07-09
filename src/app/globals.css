@@ -34,6 +34,29 @@
 .active {
     color: white;
 }
+.infinite-scroll{
+    display: flex;
+    animation: infinite-scroll 10s linear infinite;
+}
+.infinite-scroll3{
+    display: flex;
+    animation-delay: 0.5s;
+    animation: infinite-scroll 10s linear infinite;
+}
+.infinite-scroll2{
+    display: flex;
+    animation: infinite-scroll2 10s linear infinite;
+}
+ @keyframes infinite-scroll 
+ {    
+    from{ transform: translateX(0) }
+    to{ transform: translateX(-100%)}
+ }   
+ @keyframes infinite-scroll2 
+ {    
+    from{ transform: translateX(-100%) }
+    to{ transform: translateX(0)}
+ }   
 .scrollbar-hide::-webkit-scrollbar{
     display: none;
 }

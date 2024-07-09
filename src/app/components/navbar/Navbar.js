@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <>
     <motion.div className="progress-bar" style={{ scaleX: scrollYProgress }} />
-    <div className="w-full px-4 h-24 sticky top-0 z-50 bg-bodyColor mx-auto flex justify-between items-center font-titleFont border-b-[1px] border-b-gray-600">
+    <div className=" w-full px-4 md:px-16 h-24 sticky top-0 z-50 bg-bodyColor mx-auto flex justify-between items-center font-titleFont border-b-[1px] border-b-gray-600">
       <div>
       <h2 className="text-2xl font-bold text-white">My Portfolio</h2>
       </div>

@@ -1,12 +1,12 @@
 "use client"
 import Typewriter from 'typewriter-effect';
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaReact,FaCopy } from "react-icons/fa";
-import { SiTailwindcss, SiNodedotjs} from "react-icons/si";
+import { FaInstagram, FaLinkedinIn, FaReact,FaCopy } from "react-icons/fa";
+import { SiTailwindcss, SiNodedotjs, SiLeetcode} from "react-icons/si";
 
 const LeftBanner = () => {
   return (
-    <div className="w-full lgl:w-1/2 flex flex-col gap-6">
-      <div className="flex flex-col gap-5">
+    <div className="w-full xl:w-1/2 flex flex-col gap-6">
+      <div className="flex flex-col gap-4">
         <span className=" text-lg font-normal">WELCOME TO MY WORLD</span>
         <h1 className="text-3xl sml:text-5xl sm:text-4xl md:text-6xl  font-bold text-white">
           Hi, I'm <span className="text-designColor capitalize">Rishab Lath</span>
@@ -24,14 +24,14 @@ const LeftBanner = () => {
 /></span>
         </h2>
         <p className="text-justify font-bodyFont leading-6 tracking-wide">
-        An articulate and quick thinking Computer Science Engineering Student with a natural flair to communicate and build relationships online with problem-solving skills. I am Passionate about designing, developing, implementing and launching new projects. Ability to translate business requirements into technical solutions.
+        I am an innovative Fullstack Developer with hands-on experience in developing feature-rich web applications using modern technologies such as React.js, Next.js, Node.js, and MongoDB. I specialize in creating responsive, user-centric designs with Tailwind CSS and Shadcn UI. My experience includes collaborating with cross-functional teams, optimizing code for performance, and implementing secure authentication mechanisms. I am skilled in problem-solving and project management, consistently delivering high-quality results in a dynamic environment. I am also well-versed in best SEO practices, ensuring that websites rank highly on search engine results pages (SERPs) to drive organic traffic and improve visibility.
         </p>
         <div>
-          <h2 className="text-base uppercase font-titleFont mb-4">
+          <h2 className="text-base uppercase font-titleFont mb-4 mt-2">
             My Resume
           </h2>
           <div className="flex gap-2">
-          <a href='RISHAB-LATH-RESUME-2024.pdf' download> <span className="bannerIcon">
+          <a href='RISHAB-LATH-Fullstack-Resume.pdf' download> <span className="bannerIcon">
             <FaCopy /> </span> </a>
           </div>
         </div>                
@@ -46,8 +46,8 @@ const LeftBanner = () => {
             <FaInstagram /> </span> </a>
           <a href='https://www.linkedin.com/in/rishab-lath/' target="blank"> <span className="bannerIcon">
             <FaLinkedinIn /> </span> </a>
-          <a href='https://www.facebook.com/rishablath.14/' target="blank"> <span className="bannerIcon">
-            <FaFacebookF /> </span> </a>
+          <a href='https://leetcode.com/rishablath/' target="blank"> <span className="bannerIcon">
+            <SiLeetcode /> </span> </a>
           </div>
         </div>
         <div>

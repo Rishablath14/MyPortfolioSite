@@ -1,6 +1,6 @@
 import React from 'react'
 import Title from '../layouts/Title'
-import { projectOne,projectTwo,projectThree,projectFour,projectFive,projectSix,projectSeven } from "../../assets/index";
+import { projectOne,projectTwo,projectThree,projectFour,projectFive,projectSix,projectSeven,projectEight } from "../../assets/index";
 import ProjectsCard from './ProjectsCard'; 
 
 const Projects = () => {
@@ -16,6 +16,12 @@ const Projects = () => {
         />
       </div>
        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 xl:gap-14">
+        <ProjectsCard
+          title="Ashoka Printing Works webSite"
+          des="I developed a Dynamic Customer Data Management Website for Ashoka Printing Works, leveraging Next.js, TailwindCSS, Framer Motion, and Shadcn UI. This robust platform includes authentication and authorization features, ensuring secure access to customer data. I implemented advanced data handling capabilities using Tanstack Data Table, providing efficient pagination, sorting, and filtering options. To enhance performance and user experience, I utilized global state management with Context API. Additionally, I integrated dynamic charts into the dashboard, enabling them to clearly visualize their performance metrics."
+          src={projectEight}
+          link={"https://ashokaprintingworks.netlify.app/"}
+        />    
         <ProjectsCard
           title="Bru Speciality Chemicals Website"
           des="I created a stunning website for BRU Speciality Chemicals, a leading manufacturer of aroma chemicals for various industries. The website showcases the company's expertise, quality, and innovation in producing a wide range of aroma chemicals. I used NEXTjs, a React framework, to build a fast, scalable, and SEO-friendly website that delivers an amazing user experience. I also added dynamic and interactive elements to the website using Framer motion, a library for animations. I followed SEO best practices, such as optimizing the site speed, structure, and content, to boost the website's ranking."

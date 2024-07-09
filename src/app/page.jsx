@@ -6,6 +6,7 @@ import Navbar from "./components/navbar/Navbar";
 import Projects from "./components/projects/Projects";
 import Resume from "./components/resume/Resume";
 import Preloader from "./components/Preloader";
+import SkillsScroll from "./components/Skills";
 
 function App() {
   return (
@@ -13,9 +14,10 @@ function App() {
     <Preloader/>
     <div className="w-full h-auto bg-bodyColor text-lightText">
         <Navbar />
-      <div className="max-w-screen-xl mx-auto px-4">
+      <div className="w-full px-4 md:px-16">
         <Banner />
         <Features />
+        <SkillsScroll/>
         <Projects />
         <Resume />
         <Contact />

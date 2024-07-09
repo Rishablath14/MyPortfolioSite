@@ -7,6 +7,7 @@ import projectFour from "./images/orientaldetective.webp";
 import projectFive from "./images/StrikeMedia.webp";
 import projectSix from "./images/valfom.webp";
 import projectSeven from "./images/Bruorg.webp";
+import projectEight from "./images/apwss.png";
 import contactImg from "./images/contact/contactImg.png";
 
 export {
@@ -19,5 +20,6 @@ export {
   projectFive,
   projectSix,
   projectSeven,
+  projectEight,
   contactImg,
 };

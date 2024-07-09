@@ -26,6 +26,7 @@ const jsonLd = {
     ],
     "skills": [
       "Website Development",
+      "Software Development",
       "Digital Marketing",
       "Java Programming",
       "SEO",

@@ -15,50 +15,58 @@ const Education = () => {
       <div>
         <div className="py-6 lgl:py-12 font-titleFont flex flex-col gap-4">
           <p className="text-sm text-designColor tracking-[4px]">2006 - 2024</p>
-          <h2 className="text-3xl md:text-4xl font-bold">Education</h2>
+          <h2 className="text-3xl xl:text-4xl font-bold">Education</h2>
         </div>
-        <div className="mt-6 lgl:mt-14 w-full h-[1100px] border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">
+        <div className="mt-2 lgl:mt-6 w-full h-[1100px] border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">
           <ResumeCard
             title="B.tech Computer Science"
             subTitle="SAGE University, Indore(2020 - 2024)"
-            result="8.75/10"
+            result="8.9/10"
             des="The training provided by University helps me to develop my Technical Skills, Team work spirit and Creative thinking.  "
           />
           <ResumeCard
             title="Higher Secondary School"
             subTitle="Holy Cross Kapa (2018 - 2020)"
-            result="7.55/10"
-            des="Higher Secondary School helps me in developing my communication skills and leadship skills."
+            result="7.3/10"
+            des="Higher Secondary School helps me in developing my Gaming Skills, communication skills, Management Skills and leadership skills."
           />
           <ResumeCard
             title="Primary to Secondary School"
             subTitle="Shri Balaji Vidya Mandir (2006 - 2018)"
             result="8.5/10"
-            des="This 12 years of journey taught me many things from knowledge to become a responsible and kind person."
+            des="This 12 years of journey taught me many things from a kid to a sensible, knowledgable and responsible kind person with a dream."
           />
         </div>
       </div>
       {/* part Two */}
 
       <div>
-        <div className="py-6 lgl:py-12 font-titleFont flex flex-col gap-4 w-1/2">
-          <p className="text-sm text-designColor tracking-[4px]">2022 - 2023</p>
-          <h2 className="text-3xl md:text-4xl font-bold">Job Experience</h2>
+        <div className="py-6 lgl:py-12 font-titleFont flex flex-col gap-4 w-1/2 mb-2 lgl:mb-6">
+          <p className="text-sm text-designColor tracking-[4px]">2022 - 2024</p>
+          <h2 className="text-3xl xl:text-4xl font-bold">Job Experience</h2>
         </div>
-        <div className="mt-6 lgl:mt-14 w-full h-[400px] border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">
+        <div className="min-h-[350px] w-full border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">
           <JobResumeCard
             title="Digital Marketing Intern"
             subTitle="DIGITAL MIND WEB SOLUTION - ( Jun 2022 - Jan 2023 )"
             result="INDORE"
-            des="I had written blog post and created Coupons store page of edureka for microadia.net webiste with maintaining the SEO part of the same. I had also created Google ads and Facebook ads Campaign of Lead generation, Website Traffic and also designed creatives of the ads for company like AvistaClinics, GlmyoHealth and Citi Credit cards."
+            des="At Digital Mind Web Solutions, I interned in digital marketing, supporting SEO optimization, content creation, social media management, and email marketing. Collaborating with design and development teams, I integrated marketing strategies into digital platforms. I analyzed website performance data and user behavior, implementing targeted SEO strategies that boosted organic traffic. This role enhanced my digital marketing knowledge and allowed me to apply my technical skills to drive measurable results in a dynamic environment."
           />
         </div>
-        <div className="w-full h-[400px] border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">
+        <div className="pt-6 lgl:pt-14 min-h-[350px] w-full border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">
           <JobResumeCard
-            title="Website Development"
-            subTitle="FREELANCING - ( July 2023 - present )"
+            title="Website Developer"
+            subTitle="DMAP INFOTECH - ( July 2023 - NOV 2023 )"
             result="INDORE"
-            des="I have created a different sectors website like Digital Marketing Agency, NGO, Chemical Industries and more using HTML, CSS, Tailwind CSS, JavaScript, Jquery, Nextjs, Vitejs and also used Three.js, Framer Motion & GSAP animations, Swiper Effects and Slick carousel for making a dynamic and completely responsive animated webiste with backend connectivity using PHP and MySQL."
+            des="At Dmap Infotech, I excelled as a Website Developer, creating interactive, responsive web applications using Next.js, React.js, Node.js, and MongoDB. My role involved optimizing performance, implementing secure authentication, and integrating Restful APIs. By leveraging Tailwind CSS and Shadcn UI, I delivered visually appealing and device-responsive designs. Collaborating with cross-functional teams, I enhanced user engagement and aligned projects with business goals. One highlight was developing advanced animations and interactive elements, resulting in dynamic user experiences."
+          />
+        </div>
+        <div className="pt-6 lgl:pt-14 min-h-[350px] w-full border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">
+          <JobResumeCard
+            title="Fullstack Developer"
+            subTitle="Freelancing Experience - ( DEC 2023 - MAY 2024 )"
+            result="INDORE"
+            des="As a freelance Fullstack Developer, I have delivered custom web applications using React.js, Node.js, and MongoDB. My projects range from e-commerce platforms to dynamic CMS, all optimized for performance, security, and user experience. By following best SEO practices and ensuring responsive designs, my clients' websites achieve high search engine rankings and seamless performance across devices. My ability to manage multiple projects and meet tight deadlines has earned me a reputation for reliability and excellence."
           />
         </div>
       </div>

@@ -31,27 +31,39 @@ const Contact = () => {
     } else {
     setSending(true);  
     const Sendmessage=`The Person with mail and phone Number ${userEmail} and ${phoneNumber} has sent you this message - ${message}`;
-    const res = await sendMail(subject,Sendmessage);
-    if(res){
-      setSuccessMsg(
-        `Thank you dear ${username}, Your Messages has been sent Successfully!`);
-        setTimeout(() => {
-          setSuccessMsg("");
-           }, 3000);
-    }else{
+    try {
+      const response = await fetch('/.netlify/functions/sendMail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ subject, message:Sendmessage }),
+      });
+      if (!response.ok) {
+        setErrMsg("Message Sending Fail!");
+      }else{
+        setSuccessMsg(
+          `Thank you dear ${username}, Your Messages has been sent Successfully!`);
+          setTimeout(() => {
+            setSuccessMsg("");
+             }, 3000);
+      }
+      if(!response.ok){ 
+        setTimeout(() => {setErrMsg("")},2000);
+      }else{
+        setErrMsg("");
+        setUsername("");
+        setPhoneNumber("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
+      }
+    } catch (error) {
       setErrMsg("Message Sending Fail!");
-    }
-    if(!res){ 
       setTimeout(() => {setErrMsg("")},2000);
-    }else{
-      setErrMsg("");
-      setUsername("");
-      setPhoneNumber("");
-      setEmail("");
-      setSubject("");
-      setMessage("");
-    }
+    }finally{
     setSending(false);
+  }
   }
   };
  

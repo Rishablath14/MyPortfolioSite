@@ -2,6 +2,7 @@
 import React,{useState} from 'react'
 import Title from '../layouts/Title';
 import ContactLeft from './ContactLeft';
+import { sendMail } from '@/lib/mail.action';
 const Contact = () => {
   const [username, setUsername] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -9,15 +10,18 @@ const Contact = () => {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [errMsg, setErrMsg] = useState("");
+  const [sending, setSending] = useState(false);
   const [successMsg, setSuccessMsg] = useState("");
   
   
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
     if (username === "") {
       setErrMsg("Username is required!");
     } else if (phoneNumber === "") {
       setErrMsg("Phone number is required!");
+    } else if (phoneNumber.length<10 || phoneNumber.length>12) {
+      setErrMsg("Valid Phone number is required!");
     } else if (userEmail === "") {
       setErrMsg("Please give your Email!");
     } else if (subject === "") {
@@ -25,28 +29,21 @@ const Contact = () => {
     } else if (message === "") {
       setErrMsg("Message is required!");
     } else {
-      fetch("https://formsubmit.co/ajax/reshablath@gmail.com", {
-    method: "POST",
-    headers: { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-    },
-    body: JSON.stringify({
-      name: username,
-      email: userEmail,
-      number: phoneNumber,
-      subject: subject,
-      message: message
-    })
-})
-    .then(response => response.json())
-    .then(data => {console.log(data);})
-    .catch(error => {console.log(error);setErrMsg("Message Sending Fail!");});
-    setSuccessMsg(
-      `Thank you dear ${username}, Your Messages has been sent Successfully!`);
-      setTimeout(() => {
-        setSuccessMsg("");
-         }, 3000);
+    setSending(true);  
+    const Sendmessage=`The Person with mail and phone Number ${userEmail} and ${phoneNumber} has sent you this message - ${message}`;
+    const res = await sendMail(subject,Sendmessage);
+    if(res){
+      setSuccessMsg(
+        `Thank you dear ${username}, Your Messages has been sent Successfully!`);
+        setTimeout(() => {
+          setSuccessMsg("");
+           }, 3000);
+    }else{
+      setErrMsg("Message Sending Fail!");
+    }
+    if(!res){ 
+      setTimeout(() => {setErrMsg("")},2000);
+    }else{
       setErrMsg("");
       setUsername("");
       setPhoneNumber("");
@@ -54,6 +51,8 @@ const Contact = () => {
       setSubject("");
       setMessage("");
     }
+    setSending(false);
+  }
   };
  
   return (
@@ -158,9 +157,11 @@ const Contact = () => {
               </div>
               <div className="w-full">
                 <button
+                  type='submit'
+                  disabled={sending}
                   className="w-full h-12 bg-[#141518] rounded-lg text-base text-gray-400 tracking-wider uppercase hover:text-white duration-300 hover:border-[1px] hover:border-designColor border-transparent"
                 >
-                  <input type='submit' value='SUBMIT'/>
+                  {sending?"Sending...":"Submit"}
                 </button>
               </div>
               {errMsg && (

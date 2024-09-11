@@ -15,7 +15,7 @@ import * as THREE from "three";
 const Person = () => {
   const personRef = useRef(null);
   const media = window.matchMedia("(max-width: 390px)");
-  
+   
   // Load all animations and the model in parallel to ensure smooth preloading
   const { animations: animIdle } = useGLTF(personAnim); // First animation (idle)
   const { animations: animPerma } = useGLTF(personAnim2); // Second animation (perma)
@@ -104,11 +104,29 @@ useGLTF.preload(person);
 useGLTF.preload(personAnim);
 useGLTF.preload(personAnim1);
 useGLTF.preload(personAnim2);
+
 const RightBanner = () => {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1280);
+    };
+
+    // Set initial value based on current width
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
     <div className="w-full xl:w-1/2 h-screen flex justify-center items-center relative">
       <Canvas>
-        <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} enablePan={false} />
+        {isDesktop && <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} enablePan={false}/>}
         <Suspense fallback={null}>
           <Person />
         </Suspense>

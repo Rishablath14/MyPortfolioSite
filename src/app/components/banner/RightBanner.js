@@ -10,6 +10,7 @@ import personAnim from "@/app/assets/modelanim.glb";
 import personAnim2 from "@/app/assets/model2anim.glb";
 import personAnim1 from "@/app/assets/model1anim.glb";
 import * as THREE from "three";
+import HumanLoader from '../HumanLoader';
 
 
 const Person = () => {
@@ -127,7 +128,7 @@ const RightBanner = () => {
     <div className="w-full xl:w-1/2 h-screen flex justify-center items-center relative">
       <Canvas>
         {isDesktop && <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} enablePan={false}/>}
-        <Suspense fallback={null}>
+        <Suspense fallback={<HumanLoader/>}>
           <Person />
         </Suspense>
         <ambientLight intensity={1} />

@@ -24,14 +24,14 @@ const LeftBanner = () => {
 /></span>
         </h2>
         <p className="text-justify font-bodyFont leading-6 tracking-wide">
-        I am an innovative Fullstack Developer with hands-on experience in developing feature-rich web applications using modern technologies such as React.js, Next.js, Node.js, and MongoDB. I specialize in creating responsive, user-centric designs with Tailwind CSS and Shadcn UI. My experience includes collaborating with cross-functional teams, optimizing code for performance, and implementing secure authentication mechanisms. I am skilled in problem-solving and project management, consistently delivering high-quality results in a dynamic environment. I am also well-versed in best SEO practices, ensuring that websites rank highly on search engine results pages (SERPs) to drive organic traffic and improve visibility.
+        I am an aspiring Fullstack Developer with hands-on experience in developing feature-rich web applications using modern technologies such as React.js, Next.js, Node.js, and MongoDB. I specialize in creating responsive, user-centric designs with Tailwind CSS and Shadcn UI. My experience includes collaborating with cross-functional teams, optimizing code for performance, and implementing secure authentication mechanisms. I am skilled in problem-solving and project management, consistently delivering high-quality results in a dynamic environment. I am also well-versed in best SEO practices, ensuring that websites rank highly on search engine results pages (SERPs) to drive organic traffic and improve visibility.
         </p>
         <div>
           <h2 className="text-base uppercase font-titleFont mb-4 mt-2">
             My Resume
           </h2>
           <div className="flex gap-2">
-          <a href='RISHAB-LATH-Fullstack-Resume.pdf' download> <span className="bannerIcon">
+          <a href='RishabLath_Resume_pdf2024.pdf' download> <span className="bannerIcon">
             <FaCopy /> </span> </a>
           </div>
         </div>                

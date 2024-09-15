@@ -111,8 +111,8 @@ const Person = ({animation}) => {
 
   return (
     <group ref={personRef}>
-      <mesh castShadow receiveShadow scale={media.matches?1.5:2}>
-        <primitive object={scene} position={[0.2, -0.7, 0]} castShadow receiveShadow/>
+      <mesh castShadow receiveShadow scale={media.matches?1.8:2.5}>
+        <primitive object={scene} position={media.matches?[0.1, -1, 0]:[0.2, -0.9, 0]} castShadow receiveShadow/>
       </mesh>
     </group>
   );
@@ -153,7 +153,7 @@ const RightBanner = () => {
         <ambientLight intensity={1} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
       </Canvas>
-      <div className="absolute top-4 right-2">
+      <div className="absolute top-12 right-2">
         <select className="bg-[#0000003c] w-20 h-12 top-2 left-2 border border-gray-300 text-white p-2" value={selectedAnimation} onChange={(e) => setSelectedAnimation(e.target.value)}>
         <option value="rest">
           Rest

@@ -22,7 +22,7 @@ const handler = async (event) => {
 
   try {
     await transporter.sendMail({
-      from: process.env.SENDER_MAIL,
+      from: `Rishab Lath Portfolio <${process.env.SENDER_MAIL}>`,
       to: "reshablath@gmail.com",
       subject: `Query from Portfolio - ${subject}`,
       text: message,

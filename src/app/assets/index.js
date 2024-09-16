@@ -3,7 +3,7 @@ import bannerImg from "./images/bannerImg.webp";
 import projectOne from "./images/dmapinfotech.webp";
 import projectTwo from "./images/ardiginet.webp";
 import projectThree from "./images/GAFNGO.webp";
-import projectFour from "./images/orientaldetective.webp";
+import projectFour from "./images/linkedin-clone.webp";
 import projectFive from "./images/StrikeMedia.webp";
 import projectSix from "./images/valfom.webp";
 import projectSeven from "./images/Bruorg.webp";

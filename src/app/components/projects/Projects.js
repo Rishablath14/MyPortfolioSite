@@ -41,10 +41,10 @@ const Projects = () => {
           link={"https://www.strikemedia.in"}
         />
        <ProjectsCard
-          title="Oriental Detective Website"
-          des="This SEO Optmized and user-friendly Detective Agency Website, serves as the digital gateway to our world of investigative expertise. The site has been designed and developed with a focus on user experience, ensuring that clients and visitors can easily navigate and access the vital information they seek. We understand the importance of trust in our line of work, which is why the website showcases our commitment to confidentiality, perfection and professionalism. Additionally, the 'Contact Us' page allows visitors to reach out with ease, enabling swift and confidential communication."
+          title="LinkedIn Clone – Fullstack Web Application"
+          des="This LinkedIn Clone is a feature-rich, fully-functional social networking platform built using the MERN stack (MongoDB, Express.js, React.js, Node.js). Designed to emulate LinkedIn’s core functionalities, this project showcases my expertise in frontend and backend development, with added email notification capabilities to enhance user engagement. The platform offers a seamless, secure, and responsive user experience. Whether you need a dynamic social platform or a sophisticated web application, this project demonstrates my ability to deliver comprehensive and scalable solutions."
           src={projectFour}
-          link={"https://www.orientaldetective.com"}
+          link={"https://linkedinclone-by-rishab-lath.up.railway.app/"}
         />
        <ProjectsCard
           title="Girls' Armour Foundation Website"

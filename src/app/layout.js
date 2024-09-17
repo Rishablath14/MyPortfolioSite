@@ -1,5 +1,6 @@
 import "./globals.css";
 import GoogleAnalytics from "./components/GoogleAnalytics"
+import Topmate from "./components/Topmate";
 const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -37,7 +38,7 @@ const jsonLd = {
 }
 export const metadata = {
   title: "Rishab Lath - Website Developer, Java Programmer & Digital Marketer",
-  description: "Hyy! I'm Rishab Lath, a freelancer in website development, digital marketing, and Java programming. Explore my work and discover how I can bring your digital projects to life.",
+  description: "Hyy! I'm Rishab Lath, an aspiring fullstack develoer, digital marketer, and Java programmer. Explore my work and discover how I can bring your digital projects to life.",
   metadataBase: new URL('https://rishablathportfolio.netlify.app'),
   alternates: {
     canonical: 'https://rishablathportfolio.netlify.app/',
@@ -60,6 +61,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <GoogleAnalytics/>
+      <Topmate/>
       <body>
       <script
         type="application/ld+json"

@@ -16,8 +16,9 @@ const Topmate = () => {
     custom-font-size="12px"
     custom-font-weight="500"
     custom-width="120px"
-    async=""
-    defer=""
+    strategy="lazyOnload"
+    async
+    defer
   />  
     </>
   );

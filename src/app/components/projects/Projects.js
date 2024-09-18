@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { memo } from 'react'
 import Title from '../layouts/Title'
 import { projectOne,projectTwo,projectThree,projectFour,projectFive,projectSix,projectSeven,projectEight } from "../../assets/index";
 import ProjectsCard from './ProjectsCard'; 
 
-const Projects = () => {
+const Projects = memo(() => {
   return (
     <section
       id="projects"
@@ -67,6 +67,6 @@ const Projects = () => {
         </div>
     </section>
   );
-}
+})
 
 export default Projects

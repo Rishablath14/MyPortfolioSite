@@ -1,6 +1,5 @@
 import "./globals.css";
 import GoogleAnalytics from "./components/GoogleAnalytics"
-import Topmate from "./components/Topmate";
 const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -61,7 +60,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <GoogleAnalytics/>
-      <Topmate/>
       <body>
       <script
         type="application/ld+json"

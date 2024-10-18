@@ -1,9 +1,8 @@
 "use client";
-import React,{memo} from "react";
+import React from "react";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { TbBrandNextjs,TbBrandFramerMotion } from "react-icons/tb";
 import { PiGitMergeBold } from "react-icons/pi";
-import gsap from "gsap";
 import {
   FaNodeJs,
   FaReact,
@@ -25,14 +24,9 @@ import {
   SiJavascript,
   SiTailwindcss,
 } from "react-icons/si";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-const SkillsScroll = memo(() => {
-  gsap.registerPlugin(useGSAP,ScrollTrigger);
-  useGSAP(()=>{
-     gsap.from(".imgicon1",{opacity:0.5,scale:0.3,stagger:0.2,duration:1,ease:"ease-in-out",scrollTrigger:{trigger:".skills-scroll-container",start:"top 80%",end:"bottom 80%", scrub:1},})
-  })
+
+const SkillsScroll = () => {
   return (
     <section className="skills-scroll-container w-full py-12 md:py-20 border-b-[1px] border-b-black">
       <div className="w-full inline-flex flex-nowrap overflow-hidden">
@@ -190,6 +184,6 @@ const SkillsScroll = memo(() => {
       </div>
     </section>
   );
-});
+};
 
 export default SkillsScroll;

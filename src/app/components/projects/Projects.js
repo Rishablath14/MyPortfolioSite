@@ -50,20 +50,8 @@ const Projects = memo(() => {
           title="Girls' Armour Foundation Website"
           des="This NGO website is designed and developed with accessibility and ease of use in mind, ensuring that you can effortlessly navigate through our stories, projects, and opportunities to get involved. Whether you're interested in supporting our cause, seeking help, donating money or simply learning more about the incredible journey of 'Girl's Armour Foundation,' this platform is your gateway to empowerment. As the developer behind this website, I take immense pride in contributing to the online presence of an organization dedicated to such a noble cause that empower girls and make thier life better."
           src={projectThree}
-          link={"https://www.girlsarmourfoundation.in"}
-        />
-       <ProjectsCard
-          title="Ardiginet Website"
-          des="This Digital Marketing Agency Website shows a powerful online presence that reflects their unwavering commitment to digital innovation. As the developer behind this website, I ensured a seamless and user-friendly design, enabling visitors to effortlessly explore a wide range of services. From comprehensive SEO strategies to data-driven social media campaigns, Ardiginet offers tailor-made solutions to meet the unique needs of each client. I take immense pride in having used my skills to contribute to Ardiginet's digital presence and their mission to empower businesses in the digital era."
-          src={projectTwo}
-          link={"https://www.ardiginet.com"}
-        />
-       <ProjectsCard
-          title="Dmap Infotech Website"
-          des="As a seasoned web developer and digital strategist, I had the privilege of collaborating with Dmap Infotech, a leading digital marketing agency. Together, we crafted an online presence that truly reflects their commitment to digital excellence. This dynamic platform showcases the agency's expertise in transforming businesses and organizations in the digital landscape. We understand that the future of business lies in the digital landscape, and this user-friendly and interactive website reflects our collective commitment to excellence in digital marketing and services."
-          src={projectOne}
-          link={"https://www.dmapinfotech.com"}
-        />
+          link={"https://www.girlsarmour.in"}
+        />       
         </div>
     </section>
   );

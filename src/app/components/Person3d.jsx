@@ -54,24 +54,24 @@ const Person = memo(({animation}) => {
        },2500);
       const startAnimations = async () => {
         if (idleAction) {
-          idleAction.reset().fadeIn(0.1).play();
+          idleAction.reset().fadeIn(0.3).play();
           idleAction.clampWhenFinished = true;
           idleAction.loop = false;
         }
         
         await new Promise(resolve => setTimeout(resolve, 1200));
-        if (idleAction) idleAction.fadeOut(0.5);
+        if (idleAction) idleAction.fadeOut(0.3);
         if (deltaAction) {
-          deltaAction.reset().fadeIn(0.5).play();
+          deltaAction.reset().fadeIn(0.3).play();
           deltaAction.clampWhenFinished = true;
           deltaAction.loop = false;
         }
   
         // Play 'idle' animation for 3 seconds, then switch to 'perma'
         await new Promise(resolve => setTimeout(resolve, 2000));
-        if (deltaAction) deltaAction.fadeOut(0.5);
+        if (deltaAction) deltaAction.fadeOut(0.3);
         if (casualAction) {
-          casualAction.reset().fadeIn(0.5).play();
+          casualAction.reset().fadeIn(0.3).play();
           casualAction.clampWhenFinished = true;
           casualAction.loop = true;
         }
@@ -81,10 +81,10 @@ const Person = memo(({animation}) => {
       return () => {
         // Cleanup actions on unmount
         clearTimeout(time);
-        idleAction?.fadeOut(0.5);
-        deltaAction?.fadeOut(0.5);
-        permaAction?.fadeOut(0.5);
-        casualAction?.fadeOut(0.5);
+        idleAction?.fadeOut(0.3);
+        deltaAction?.fadeOut(0.3);
+        permaAction?.fadeOut(0.3);
+        casualAction?.fadeOut(0.3);
       };
     }, []);
   

@@ -20,7 +20,7 @@ module.exports = {
       },
       fontFamily: {
         bodyFont: ["Poppins", "sans-serif"],
-        titleFont: ["Montserrat", "sans-serif"],
+        titleFont: ["SpaceGrotesk", "sans-serif"],
       },
       colors: {
         bodyColor: "#212428",

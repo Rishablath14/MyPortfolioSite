@@ -1,6 +1,6 @@
 "use client"
 import Typewriter from 'typewriter-effect';
-import { FaInstagram, FaLinkedinIn, FaReact,FaCopy } from "react-icons/fa";
+import { FaLinkedinIn, FaReact,FaCopy, FaGithub } from "react-icons/fa";
 import { SiTailwindcss, SiNodedotjs, SiLeetcode} from "react-icons/si";
 
 const LeftBanner = () => {
@@ -24,26 +24,16 @@ const LeftBanner = () => {
 /></span>
         </h2>
         <p className="text-justify font-bodyFont leading-6 tracking-wide">
-        I am an aspiring Fullstack Developer with hands-on experience in developing feature-rich web applications using modern technologies such as React.js, Next.js, Node.js, three.js and MongoDB. I specialize in creating responsive, user-centric designs with Tailwind CSS and Shadcn UI. My experience includes collaborating with cross-functional teams, optimizing code for performance, and implementing secure authentication mechanisms. I am skilled in problem-solving and project management, consistently delivering high-quality results in a dynamic environment. I am also well-versed in best SEO practices, ensuring that websites rank highly on search engine results pages (SERPs) to drive organic traffic and improve visibility.
+        Aspiring Fullstack Developer with expertise in building feature-rich web applications using React.js, Next.js, Node.js, Three.js, and MongoDB. I specialize in crafting responsive, user-focused designs with Tailwind CSS and Shadcn UI, ensuring seamless functionality and an engaging user experience. Experienced in collaborating with cross-functional teams, optimizing code for performance, and implementing secure authentication. Proficient in SEO best practices, driving organic traffic and improving visibility through optimized design and development. Committed to delivering high-quality solutions in dynamic environments.
         </p>
-        <div>
-          <h2 className="text-base uppercase font-titleFont mb-4 mt-2">
-            My Resume
-          </h2>
-          <div className="flex gap-2">
-          <a href='RishabLath_ResumeSDE.pdf' download> <span className="bannerIcon">
-            <FaCopy /> </span> </a>
-          </div>
-        </div>                
-      </div>
-      <div className="flex flex-col xl:flex-row gap-6 xl:gap-2 justify-between">
+        <div className="flex flex-col xl:flex-row gap-6 xl:gap-2 justify-between mt-2">
         <div>
           <h2 className="text-base uppercase font-titleFont mb-4">
             Find me in
           </h2>
           <div className="flex gap-4">
-          <a href='https://www.instagram.com/rishablath.14/' target="blank"> <span className="bannerIcon">
-            <FaInstagram /> </span> </a>
+          <a href='https://github.com/Rishablath14' target="blank"> <span className="bannerIcon">
+            <FaGithub /> </span> </a>
           <a href='https://www.linkedin.com/in/rishab-lath/' target="blank"> <span className="bannerIcon">
             <FaLinkedinIn /> </span> </a>
           <a href='https://leetcode.com/rishablath/' target="blank"> <span className="bannerIcon">
@@ -69,6 +59,16 @@ const LeftBanner = () => {
             </span>
           </div>
         </div>
+      </div>
+        <div>
+          <h2 className="text-base uppercase font-titleFont mb-4 mt-2">
+            My Resume
+          </h2>
+          <div className="flex gap-2">
+          <a href='RishabLath_Resume_ASDE.pdf' download> <span className="bannerIcon">
+            <FaCopy /> </span> </a>
+          </div>
+        </div>                
       </div>
     </div>
   );

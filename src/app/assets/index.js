@@ -4,7 +4,7 @@ import projectOne from "./images/dmapinfotech.webp";
 import projectTwo from "./images/ardiginet.webp";
 import projectThree from "./images/gafpro.png";
 import projectFour from "./images/linkedin-clone.webp";
-import projectFive from "./images/StrikeMedia.webp";
+import projectFive from "./images/rlexiconImage.png";
 import projectSix from "./images/valfom.webp";
 import projectSeven from "./images/Bruorg.webp";
 import projectEight from "./images/apwss.png";

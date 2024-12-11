@@ -29,7 +29,7 @@ const Projects = memo(() => {
           title="RLexicon – Multi-Tenant Blog SaaS Platform"
           des="RLexicon is a scalable SaaS platform built for managing blogs and publications efficiently. Using Next.js 15, TypeScript, and Prisma, it supports 100+ tenants with secure role-based authentication via KindAuth and real-time updates. Features include a Notion-style rich text editor, seamless Stripe integration for subscriptions, and optimized performance with SSR techniques. Powered by Supabase, RLexicon delivers a responsive, SEO-friendly, and user-focused experience, making it ideal for modern blogging needs.This platform not only enhances productivity but also delivers a seamless experience for users across diverse business contexts."
           src={projectFive}
-          link={"https://www.strikemedia.in"}
+          link={"https://rlexicon.vercel.app"}
         />
         <ProjectsCard
           title="Bru Speciality Chemicals Website"

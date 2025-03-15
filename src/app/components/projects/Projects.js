@@ -53,7 +53,7 @@ const Projects = memo(() => {
           title="LinkedIn Clone – Fullstack Web Application"
           des="This LinkedIn Clone is a feature-rich, fully-functional social networking platform built using the MERN stack (MongoDB, Express.js, React.js, Node.js). Designed to emulate LinkedIn’s core functionalities, this project showcases my expertise in frontend and backend development, with added email notification capabilities to enhance user engagement. The platform offers a seamless, secure, and responsive user experience. Whether you need a dynamic social platform or a sophisticated web application, this project demonstrates my ability to deliver comprehensive and scalable solutions."
           src={projectFour}
-          link={"https://linkedinclone-by-rishab-lath.up.railway.app/"}
+          link={"https://github.com/Rishablath14/Linkedin_CLone"}
         />
         <ProjectsCard
           title="Girls' Armour Foundation Website"

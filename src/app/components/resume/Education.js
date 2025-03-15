@@ -47,6 +47,14 @@ const Education = () => {
         </div>
         <div className="min-h-[350px] w-full border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">
           <JobResumeCard
+            title="Associate Software Developer"
+            subTitle="Magure Inc. - ( November 2024 - Present )"
+            result="Raipur, Chhattisgarh"
+            des="In my current role as a Associate Software Development Engineer, I am driving key innovations to enhance the IGNYTE platform, empowering 1000+ startups and businesses globally. My work focuses on developing robust, secure features that prioritize scalability, utilizing cutting-edge technologies like React.js, TypeScript, .NET Core, and Blazor Pages. By collaborating effectively within a fast-paced Agile environment, I’ve contributed to improving the platform’s efficiency and performance metrics while aligning technical outcomes with strategic business objectives."
+          />
+        </div>
+        <div className="pt-6 lgl:pt-14 min-h-[350px] w-full border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">
+          <JobResumeCard
             title="Website Developer"
             subTitle="DMAP INFOTECH - ( July 2023 - December 2023 )"
             result="INDORE"

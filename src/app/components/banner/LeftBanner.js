@@ -1,7 +1,7 @@
 "use client";
 import Typewriter from "typewriter-effect";
-import { FaLinkedinIn, FaReact, FaCopy, FaGithub } from "react-icons/fa";
-import { SiTailwindcss, SiNodedotjs, SiLeetcode } from "react-icons/si";
+import { FaLinkedinIn, FaCopy, FaGithub, FaJava } from "react-icons/fa";
+import { SiNodedotjs, SiLeetcode, SiNextdotjs } from "react-icons/si";
 
 const LeftBanner = () => {
   return (
@@ -71,13 +71,13 @@ const LeftBanner = () => {
             </h2>
             <div className="flex gap-4">
               <span className="bannerIcon">
-                <FaReact />
+                <SiNextdotjs />
               </span>
               {/* <span className="bannerIcon">
               <SiJava />
             </span> */}
               <span className="bannerIcon">
-                <SiTailwindcss />
+                <FaJava />
               </span>
               <span className="bannerIcon">
                 <SiNodedotjs />
@@ -90,7 +90,7 @@ const LeftBanner = () => {
             My Resume
           </h2>
           <div className="flex gap-2">
-            <a href="RishabLath_Resume_SDE_2025.pdf" download>
+            <a href="RishabLath_Resume_ASDE_2025.pdf" download>
               {" "}
               <span className="bannerIcon">
                 <FaCopy />{" "}

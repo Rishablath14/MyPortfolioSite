@@ -9,7 +9,7 @@ import {
   projectSix,
   projectSeven,
   projectEight,
-} from "../../assets/index";
+} from "../../../assets/index";
 import ProjectsCard from "./ProjectsCard";
 
 const Projects = memo(() => {

@@ -23,6 +23,9 @@ import {
   SiExpress,
   SiJavascript,
   SiTailwindcss,
+  SiDotnet,
+  SiReacthookform,
+  SiZod
 } from "react-icons/si";
 
 
@@ -36,6 +39,9 @@ const SkillsScroll = () => {
           </li>
           <li className="text-6xl md:text-8xl ">
             <TbBrandFramerMotion className="imgicon1"/>
+          </li>
+          <li className="text-6xl md:text-8xl ">
+            <SiDotnet className="imgicon1"/>
           </li>
           <li className="text-6xl md:text-8xl ">
             <SiJavascript className="imgicon1"/>
@@ -62,6 +68,9 @@ const SkillsScroll = () => {
           </li>
           <li className="text-6xl md:text-8xl ">
             <TbBrandFramerMotion className="imgicon1"/>
+          </li>
+          <li className="text-6xl md:text-8xl ">
+            <SiDotnet className="imgicon1"/>
           </li>
           <li className="text-6xl md:text-8xl ">
             <SiJavascript  className="imgicon1"/>
@@ -92,6 +101,9 @@ const SkillsScroll = () => {
             <SiTailwindcss  className="imgicon1"/>
           </li>
           <li className="text-6xl md:text-8xl ">
+            <SiReacthookform  className="imgicon1"/>
+          </li>
+          <li className="text-6xl md:text-8xl ">
             <FaPython  className="imgicon1"/>
           </li>
           <li className="text-6xl md:text-8xl ">
@@ -116,6 +128,9 @@ const SkillsScroll = () => {
           </li>
           <li className="text-6xl md:text-8xl ">
             <SiTailwindcss  className="imgicon1"/>
+          </li>
+          <li className="text-6xl md:text-8xl ">
+            <SiReacthookform  className="imgicon1"/>
           </li>
           <li className="text-6xl md:text-8xl ">
             <FaPython  className="imgicon1"/>
@@ -143,6 +158,9 @@ const SkillsScroll = () => {
             <SiFirebase  className="imgicon1"/>
           </li>
           <li className="text-6xl md:text-8xl ">
+            <SiZod  className="imgicon1"/>
+          </li>
+          <li className="text-6xl md:text-8xl ">
             <BiLogoPostgresql  className="imgicon1"/>
           </li>
           <li className="text-6xl md:text-8xl ">
@@ -167,6 +185,9 @@ const SkillsScroll = () => {
           </li>
           <li className="text-6xl md:text-8xl ">
             <SiFirebase  className="imgicon1"/>
+          </li>
+          <li className="text-6xl md:text-8xl">
+            <SiZod  className="imgicon1"/>
           </li>
           <li className="text-6xl md:text-8xl ">
             <BiLogoPostgresql  className="imgicon1"/>

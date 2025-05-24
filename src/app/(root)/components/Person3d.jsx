@@ -2,7 +2,7 @@ import person from "@/app/assets/model2.glb";
 import personAnim from "@/app/assets/modelanim.glb";
 import personAnim2 from "@/app/assets/model2anim.glb";
 import personAnim1 from "@/app/assets/model1anim.glb";
-import personAnim4 from "@/app/assets/backflip.glb";;
+import personAnim4 from "@/app/assets/backflip.glb";
 import * as THREE from "three";
 import { useAnimations, useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
@@ -12,14 +12,13 @@ import { useEffect, useRef, useState,memo } from "react";
 const Person = memo(({animation}) => {
     const personRef = useRef(null);
     const media = window.matchMedia("(max-width: 480px)");
-    // Load all animations and the model in parallel to ensure smooth preloading
-    const { animations: animIdle } = useGLTF(personAnim); // First animation (idle)
-    const { animations: animPerma } = useGLTF(personAnim2); // Second animation (perma)
-    const { animations: animDelta } = useGLTF(personAnim1); // Third animation (delta)
-    const { animations: animFlip } = useGLTF(personAnim4); // Third animation (delta)
-    const { animations: animD } = useGLTF(person); // Third animation (delta)
-    const { scene } = useGLTF(person); // Static model
-    // Rename animations for clarity
+    const { animations: animIdle } = useGLTF(personAnim);
+    const { animations: animPerma } = useGLTF(personAnim2);
+    const { animations: animDelta } = useGLTF(personAnim1);
+    const { animations: animFlip } = useGLTF(personAnim4);
+    const { animations: animD } = useGLTF(person);
+    const { scene } = useGLTF(person);
+  
     animIdle[0].name = "idle";
     animPerma[0].name = "wait";
     animDelta[0].name = "delta";
@@ -67,7 +66,6 @@ const Person = memo(({animation}) => {
           deltaAction.loop = false;
         }
   
-        // Play 'idle' animation for 3 seconds, then switch to 'perma'
         await new Promise(resolve => setTimeout(resolve, 2000));
         if (deltaAction) deltaAction.fadeOut(0.3);
         if (casualAction) {

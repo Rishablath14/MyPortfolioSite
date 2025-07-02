@@ -13,26 +13,6 @@ const Features = () => {
       className="w-full py-20 border-b-[1px] border-b-black"
     >
       <Title title="Services" des="What I Do" />
-      <iframe
-        data-testid="event-video"
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/jfKfPfyJRdk?si=CrbLYNVfR7FnpxBC"
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerPolicy="strict-origin-when-cross-origin"
-        allowFullScreen
-      ></iframe>
-      <iframe
-        width="300"
-        height="500"
-        src="https://www.youtube.com/live_chat?v=jfKfPfyJRdk&embed_domain=https://rishablathportfolio.netlify.app"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerPolicy="strict-origin-when-cross-origin"
-        allowFullScreen
-      ></iframe>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-20">
         <Card
           title="Web Development"

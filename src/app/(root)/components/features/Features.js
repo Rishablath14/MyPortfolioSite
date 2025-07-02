@@ -1,10 +1,10 @@
-import React from 'react'
-import {FaLaptopCode,FaSearchengin, FaHandPointUp } from "react-icons/fa";
-import { SiProgress, } from "react-icons/si";
-import { DiJava, } from "react-icons/di";
-import { GiAbstract049, } from "react-icons/gi";
-import Title from '../layouts/Title';
-import Card from './Card';
+import React from "react";
+import { FaLaptopCode, FaSearchengin, FaHandPointUp } from "react-icons/fa";
+import { SiProgress } from "react-icons/si";
+import { DiJava } from "react-icons/di";
+import { GiAbstract049 } from "react-icons/gi";
+import Title from "../layouts/Title";
+import Card from "./Card";
 
 const Features = () => {
   return (
@@ -13,21 +13,41 @@ const Features = () => {
       className="w-full py-20 border-b-[1px] border-b-black"
     >
       <Title title="Services" des="What I Do" />
+      <iframe
+        data-testid="event-video"
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/jfKfPfyJRdk?si=CrbLYNVfR7FnpxBC"
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
+      ></iframe>
+      <iframe
+        width="300"
+        height="500"
+        src="https://www.youtube.com/live_chat?v=jfKfPfyJRdk&embed_domain=https://rishablathportfolio.netlify.app"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
+      ></iframe>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-20">
         <Card
           title="Web Development"
           des="I can make attractive and eye catching SEO Optimized Website with user interactive nature and backend connectivity that helps to strength your digital presence like your Business, Services or about yourself."
-          icon={<FaLaptopCode/>}
+          icon={<FaLaptopCode />}
         />
         <Card
           title="SEO"
           des="I can analyze and make result oriented audit report which helps to increase website traffic and get optimized according to the search engine algorithm to get higher rank in SERP."
-          icon={<FaSearchengin/>}
+          icon={<FaSearchengin />}
         />
         <Card
           title="Pay Per Click"
-          des=" I can create goal oriented PPC ads that helps to grow your business and increase your website traffic, sales and leads with the minimum CPC, high CTR and low ACOS."                                                                      
-          icon={<FaHandPointUp/>}
+          des=" I can create goal oriented PPC ads that helps to grow your business and increase your website traffic, sales and leads with the minimum CPC, high CTR and low ACOS."
+          icon={<FaHandPointUp />}
         />
         <Card
           title="SMM"
@@ -37,16 +57,16 @@ const Features = () => {
         <Card
           title="Java Programmer"
           des="I can make Web app using java and its frameworks like JDBC,JSP and Servelet and also Connect to database using MySQL. You can also hire me for teaching Full Stack Java programming."
-          icon={<DiJava/>}
+          icon={<DiJava />}
         />
         <Card
           title="Graphic Designing"
           des="As a digital marketer I had developed my skills in creative designing too and I can make purpose driven and engaging design for any kind of situations, campaigns and business requirements."
-          icon={<GiAbstract049/>}
+          icon={<GiAbstract049 />}
         />
       </div>
     </section>
   );
-}
+};
 
-export default Features
+export default Features;

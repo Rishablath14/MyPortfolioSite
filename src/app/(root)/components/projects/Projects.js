@@ -25,18 +25,18 @@ const Projects = memo(() => {
         />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 xl:gap-14">
-        <ProjectsCard
-          title="RLexicon – Multi-Tenant Blog SaaS Platform"
-          des="RLexicon is a scalable SaaS platform built for managing blogs and publications efficiently. Using Next.js 15, TypeScript, and Prisma, it supports 100+ tenants with secure role-based authentication via KindAuth and real-time updates. Features include a Notion-style rich text editor, seamless Stripe integration for subscriptions, and optimized performance with SSR techniques. Powered by Supabase, RLexicon delivers a responsive, SEO-friendly, and user-focused experience, making it ideal for modern blogging needs.This platform not only enhances productivity but also delivers a seamless experience for users across diverse business contexts."
-          src={projectFive}
-          link={"https://rlexicon.vercel.app"}
-        />
-        <ProjectsCard
-          title="Bru Speciality Chemicals Website"
-          des="I created a stunning website for BRU Speciality Chemicals, a leading manufacturer of aroma chemicals for various industries. The website showcases the company's expertise, quality, and innovation in producing a wide range of aroma chemicals. I used NEXTjs, a React framework, to build a fast, scalable, and SEO-friendly website that delivers an amazing user experience. I also added dynamic and interactive elements to the website using Framer motion, a library for animations. I followed SEO best practices, such as optimizing the site speed, structure, and content, to boost the website's ranking."
-          src={projectSeven}
-          link={"https://www.bruorg.com"}
-        />
+        // <ProjectsCard
+        //   title="RLexicon – Multi-Tenant Blog SaaS Platform"
+        //   des="RLexicon is a scalable SaaS platform built for managing blogs and publications efficiently. Using Next.js 15, TypeScript, and Prisma, it supports 100+ tenants with secure role-based authentication via KindAuth and real-time updates. Features include a Notion-style rich text editor, seamless Stripe integration for subscriptions, and optimized performance with SSR techniques. Powered by Supabase, RLexicon delivers a responsive, SEO-friendly, and user-focused experience, making it ideal for modern blogging needs.This platform not only enhances productivity but also delivers a seamless experience for users across diverse business contexts."
+        //   src={projectFive}
+        //   link={"https://rlexicon.vercel.app"}
+        // />
+        // <ProjectsCard
+        //   title="Bru Speciality Chemicals Website"
+        //   des="I created a stunning website for BRU Speciality Chemicals, a leading manufacturer of aroma chemicals for various industries. The website showcases the company's expertise, quality, and innovation in producing a wide range of aroma chemicals. I used NEXTjs, a React framework, to build a fast, scalable, and SEO-friendly website that delivers an amazing user experience. I also added dynamic and interactive elements to the website using Framer motion, a library for animations. I followed SEO best practices, such as optimizing the site speed, structure, and content, to boost the website's ranking."
+        //   src={projectSeven}
+        //   link={"https://www.bruorg.com"}
+        // />
         <ProjectsCard
           title="Valfom Industries Website"
           des="I designed and developed this website for Valfom Industries, a leading supplier of flavours, fragrances, and essential oils. The website showcases the company's products, services, and values, and provides an engaging user experience. I used Vite js, HTML, CSS, and JS to create a fast, responsive, and modern website, and applied GSAP for eye-catching animations to enhance the visual appeal. I also implemented SEO best practices, such as writing concise meta descriptions, using relevant keywords, and creating clear headings, to increase the website's visibility and ranking on search engines."

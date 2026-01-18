@@ -9,7 +9,7 @@ import { motion, useScroll, AnimatePresence } from "framer-motion";
 import { navLinksdata } from "../../constants";
 import Image from "next/image";
 
-const Navbar = () => {
+const Navbar = ({ showBrand = true }) => {
   const { scrollYProgress } = useScroll();
   const [showMenu, setShowMenu] = useState(false);
   return (
@@ -20,12 +20,30 @@ const Navbar = () => {
       />
       <div className="w-full px-4 md:px-16 h-24 fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-xl mx-auto flex justify-between items-center font-titleFont border-b border-white/10">
         <div>
-          <div className="flex flex-col leading-none">
-            <span className="text-[0.7rem] uppercase tracking-[0.5em] text-white/60">
-              Portfolio
-            </span>
-            <span className="text-2xl font-bold text-white">Rishab Lath</span>
-          </div>
+          {showBrand ? (
+            <motion.div
+              layoutId="brand-lockup"
+              layout="position"
+              transition={{ layout: { duration: 0.7, ease: "easeInOut" } }}
+              className="flex flex-col leading-none"
+            >
+              <span className="text-[0.7rem] uppercase tracking-[0.5em] text-white/60">
+                Portfolio
+              </span>
+              <span className="text-2xl font-bold text-white">
+                Rishab Lath
+              </span>
+            </motion.div>
+          ) : (
+            <div className="flex flex-col leading-none opacity-0 select-none">
+              <span className="text-[0.7rem] uppercase tracking-[0.5em] text-white/60">
+                Portfolio
+              </span>
+              <span className="text-2xl font-bold text-white">
+                Rishab Lath
+              </span>
+            </div>
+          )}
         </div>
         <div>
           <ul className="hidden mdl:inline-flex items-center gap-6 lg:gap-10">

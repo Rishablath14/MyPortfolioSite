@@ -30,16 +30,17 @@ const LeftBanner = () => {
           </span>
         </h2>
         <p className="text-justify font-bodyFont leading-7 tracking-wide text-white/70">
-          Aspiring Fullstack Developer with expertise in building feature-rich
-          web applications using React.js, Next.js, Node.js, Three.js, and
-          MongoDB. I specialize in crafting responsive, user-focused designs
-          with Tailwind CSS and Shadcn UI, ensuring seamless functionality and
-          an engaging user experience. Experienced in collaborating with
-          cross-functional teams, optimizing code for performance, and
-          implementing secure authentication. Proficient in SEO best practices,
-          driving organic traffic and improving visibility through optimized
-          design and development. Committed to delivering high-quality solutions
-          in dynamic environments.
+          A results-driven Full Stack Developer with hands-on experience
+          building scalable web and mobile applications across frontend and
+          backend systems. Strong in problem-solving, clean code design, and
+          translating business requirements into reliable technical solutions.
+          Experienced with modern development workflows, cross-team
+          collaboration, and real-world project ownership. Passionate about
+          continuous learning, system design, and applying data structures and
+          algorithms to solve practical engineering challenges. Proficient in
+          SEO best practices, driving organic traffic and improving visibility
+          through optimized design and development. Committed to delivering
+          high-quality solutions in dynamic environments.
         </p>
         <div className="flex flex-wrap items-center gap-4 mt-2">
           <a href="#projects" className="pill-accent">

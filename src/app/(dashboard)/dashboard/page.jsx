@@ -1,25 +1,34 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { useEffect, useMemo, useState } from 'react';
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
 import {
-  BarChart, Bar, XAxis, YAxis, Tooltip,
-  ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line
-} from 'recharts';
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  PieChart,
+  Pie,
+  Cell,
+  LineChart,
+  Line,
+} from "recharts";
 
 const PASSWORD = process.env.NEXT_PUBLIC_DASHBOARD_PASSWORD;
-const COLORS = ['#6366f1', '#22c55e', '#facc15', '#f97316', '#06b6d4'];
+const COLORS = ["#6366f1", "#22c55e", "#facc15", "#f97316", "#06b6d4"];
 
 export default function Dashboard() {
   const router = useRouter();
-  const [passwordInput, setPasswordInput] = useState('');
+  const [passwordInput, setPasswordInput] = useState("");
   const [hasAccess, setHasAccess] = useState(false);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem('pass');
+    const stored = localStorage.getItem("pass");
     if (stored === PASSWORD) setHasAccess(true);
   }, []);
 
@@ -28,11 +37,11 @@ export default function Dashboard() {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const res = await fetch('/api/visitor');
+        const res = await fetch("/api/visitor");
         const result = await res.json();
         setData(result);
       } catch (err) {
-        console.error('Fetch error:', err);
+        console.error("Fetch error:", err);
       } finally {
         setLoading(false);
       }
@@ -42,11 +51,11 @@ export default function Dashboard() {
 
   const handleLogin = () => {
     if (passwordInput === PASSWORD) {
-      localStorage.setItem('pass', PASSWORD);
+      localStorage.setItem("pass", PASSWORD);
       setHasAccess(true);
     } else {
-      alert('Incorrect password');
-      router.push('/');
+      alert("Incorrect password");
+      router.push("/");
     }
   };
 
@@ -75,15 +84,17 @@ export default function Dashboard() {
       else newUsers++;
     });
     return [
-      { name: 'New', value: newUsers },
-      { name: 'Returning', value: returning },
+      { name: "New", value: newUsers },
+      { name: "Returning", value: returning },
     ];
   }, [data]);
 
   if (!hasAccess) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4">
-        <h2 className="text-2xl font-semibold mb-4">Enter Dashboard Password</h2>
+        <h2 className="text-2xl font-semibold mb-4">
+          Enter Dashboard Password
+        </h2>
         <input
           type="password"
           value={passwordInput}
@@ -113,7 +124,10 @@ export default function Dashboard() {
     <main className="min-h-screen bg-gray-100 p-6 md:p-10">
       <div className="flex items-center justify-between mb-8">
         <h1 className="text-3xl font-bold text-gray-800">Visitor Dashboard</h1>
-        <Link href="/" className="text-indigo-600 underline hover:text-indigo-800">
+        <Link
+          href="/"
+          className="text-indigo-600 underline hover:text-indigo-800"
+        >
           Home
         </Link>
       </div>
@@ -145,7 +159,14 @@ export default function Dashboard() {
         <ChartCard title="Visitors by Location">
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
-              <Pie data={locationData} dataKey="value" cx="50%" cy="50%" outerRadius={100} label>
+              <Pie
+                data={locationData}
+                dataKey="value"
+                cx="50%"
+                cy="50%"
+                outerRadius={100}
+                label
+              >
                 {locationData.map((_, i) => (
                   <Cell key={i} fill={COLORS[i % COLORS.length]} />
                 ))}
@@ -161,30 +182,51 @@ export default function Dashboard() {
               <XAxis dataKey="name" />
               <YAxis />
               <Tooltip />
-              <Line type="monotone" dataKey="value" stroke="#10b981" strokeWidth={3} />
+              <Line
+                type="monotone"
+                dataKey="value"
+                stroke="#10b981"
+                strokeWidth={3}
+              />
             </LineChart>
           </ResponsiveContainer>
         </ChartCard>
       </div>
 
       {/* Visitor List */}
-      <h2 className="text-2xl font-semibold text-gray-700 mb-4">Visitor Details</h2>
+      <h2 className="text-2xl font-semibold text-gray-700 mb-4">
+        Visitor Details
+      </h2>
       <div className="max-h-[400px] overflow-y-auto space-y-4">
-        {data.visitors.map((v) => (
-          <div
-            key={v._id}
-            className="bg-white p-4 rounded-lg shadow border border-gray-200 text-sm"
-          >
-            <p><strong>IP:</strong> {v.ip}</p>
-            <p><strong>Location:</strong> {v.location}</p>
-            <p><strong>User Agent:</strong> {v.userAgent}</p>
-            <p><strong>First Visit:</strong> {new Date(v.createdAt).toLocaleString()}</p>
-            <p><strong>Last Visit:</strong> {new Date(v.updatedAt).toLocaleString()}</p>
-            <span className="inline-block mt-2 px-3 py-1 bg-indigo-600 text-white rounded-full">
-              Views: {v.viewCount}
-            </span>
-          </div>
-        ))}
+        {data.visitors
+          .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
+          .map((v) => (
+            <div
+              key={v._id}
+              className="bg-white p-4 rounded-lg shadow border border-gray-200 text-sm"
+            >
+              <p>
+                <strong>IP:</strong> {v.ip}
+              </p>
+              <p>
+                <strong>Location:</strong> {v.location}
+              </p>
+              <p>
+                <strong>User Agent:</strong> {v.userAgent}
+              </p>
+              <p>
+                <strong>First Visit:</strong>{" "}
+                {new Date(v.createdAt).toLocaleString()}
+              </p>
+              <p>
+                <strong>Last Visit:</strong>{" "}
+                {new Date(v.updatedAt).toLocaleString()}
+              </p>
+              <span className="inline-block mt-2 px-3 py-1 bg-indigo-600 text-white rounded-full">
+                Views: {v.viewCount}
+              </span>
+            </div>
+          ))}
       </div>
     </main>
   );
@@ -194,15 +236,17 @@ function SummaryCard({ title, value, subtitle }) {
   return (
     <div className="p-6 bg-white rounded-xl shadow border border-gray-200">
       <p className="text-gray-500 text-sm">{title}</p>
-      <h2 className="text-2xl font-bold text-gray-900">{value || '—'}</h2>
+      <h2 className="text-2xl font-bold text-gray-900">{value || "—"}</h2>
       {subtitle && <p className="text-gray-400 mt-1 text-sm">{subtitle}</p>}
     </div>
   );
 }
 
-function ChartCard({ title, children, className = '' }) {
+function ChartCard({ title, children, className = "" }) {
   return (
-    <div className={`bg-white p-6 rounded-xl shadow border border-gray-200 ${className}`}>
+    <div
+      className={`bg-white p-6 rounded-xl shadow border border-gray-200 ${className}`}
+    >
       <h3 className="text-lg font-semibold text-gray-800 mb-4">{title}</h3>
       {children}
     </div>

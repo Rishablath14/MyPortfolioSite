@@ -1,7 +1,7 @@
-"use client"
-import React,{useState} from 'react'
-import Title from '../layouts/Title';
-import ContactLeft from './ContactLeft';
+"use client";
+import React, { useState } from "react";
+import Title from "../layouts/Title";
+import ContactLeft from "./ContactLeft";
 
 const Contact = () => {
   const [username, setUsername] = useState("");
@@ -12,15 +12,14 @@ const Contact = () => {
   const [errMsg, setErrMsg] = useState("");
   const [sending, setSending] = useState(false);
   const [successMsg, setSuccessMsg] = useState("");
-  
-  
+
   const submitHandler = async (e) => {
     e.preventDefault();
     if (username === "") {
-      setErrMsg("Username is required!");
+      setErrMsg("Name is required!");
     } else if (phoneNumber === "") {
       setErrMsg("Phone number is required!");
-    } else if (phoneNumber.length<10 || phoneNumber.length>12) {
+    } else if (phoneNumber.length < 10 || phoneNumber.length > 12) {
       setErrMsg("Valid Phone number is required!");
     } else if (userEmail === "") {
       setErrMsg("Please give your Email!");
@@ -29,64 +28,76 @@ const Contact = () => {
     } else if (message === "") {
       setErrMsg("Message is required!");
     } else {
-    setSending(true);  
-    const Sendmessage=`The Person with mail and phone Number ${userEmail} and ${phoneNumber} has sent you this message - ${message}`;
-    try {
-      const response = await fetch('/.netlify/functions/sendMail', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ subject, message:Sendmessage }),
-      });
-      if (!response.ok) {
-        setErrMsg("Message Sending Fail!");
-      }else{
-        setSuccessMsg(
-          `Thank you dear ${username}, Your Messages has been sent Successfully!`);
+      setSending(true);
+      const Sendmessage = `The Person with mail and phone Number ${userEmail} and ${phoneNumber} has sent you this message - ${message}`;
+      try {
+        const response = await fetch("/.netlify/functions/sendMail", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ subject, message: Sendmessage }),
+        });
+        if (!response.ok) {
+          setErrMsg("Message Sending Fail!");
+        } else {
+          setSuccessMsg(
+            `Thank you dear ${username}, Your Messages has been sent Successfully!`,
+          );
           setTimeout(() => {
             setSuccessMsg("");
-             }, 3000);
+          }, 3000);
+        }
+        if (!response.ok) {
+          setTimeout(() => {
+            setErrMsg("");
+          }, 2000);
+        } else {
+          setErrMsg("");
+          setUsername("");
+          setPhoneNumber("");
+          setEmail("");
+          setSubject("");
+          setMessage("");
+        }
+      } catch (error) {
+        setErrMsg("Message Sending Fail!");
+        setTimeout(() => {
+          setErrMsg("");
+        }, 2000);
+      } finally {
+        setSending(false);
       }
-      if(!response.ok){ 
-        setTimeout(() => {setErrMsg("")},2000);
-      }else{
-        setErrMsg("");
-        setUsername("");
-        setPhoneNumber("");
-        setEmail("");
-        setSubject("");
-        setMessage("");
-      }
-    } catch (error) {
-      setErrMsg("Message Sending Fail!");
-      setTimeout(() => {setErrMsg("")},2000);
-    }finally{
-    setSending(false);
-  }
-  }
+    }
   };
- 
+
   return (
     <section
       id="contact"
-      className="w-full py-20 border-b-[1px] border-b-black"
+      className="w-full py-20 border-b border-white/10 relative overflow-hidden"
     >
+      <div className="pointer-events-none absolute left-[-8%] top-6 text-[5rem] md:text-[8rem] font-titleFont font-bold text-white/5 tracking-[0.2em]">
+        Contact
+      </div>
       <div className="flex justify-center items-center text-center">
-        <Title title="CONTACT" des="Contact With Me" />
+        <Title title="Get In Touch" des="Contact Me" />
       </div>
       <div className="w-full">
-        <div className="w-full h-auto flex flex-col lgl:flex-row justify-between">
+        <div className="w-full h-auto flex flex-col lgl:flex-row justify-between gap-8">
           <ContactLeft />
-          <div className="w-full lgl:w-[60%] h-full py-10 bg-gradient-to-r from-[#1e2024] to-[#23272b] flex flex-col gap-8 p-4 lgl:p-8 rounded-lg shadow-shadowOne">
-            <form className="w-full flex flex-col gap-4 lgl:gap-6 py-2 lgl:py-5" method="POST" onSubmit={submitHandler}>
+          <div className="w-full lgl:w-[60%] h-full py-10 glass-card flex flex-col gap-8 p-4 lgl:p-8 rounded-3xl">
+            <form
+              className="w-full flex flex-col gap-4 lgl:gap-6 py-2 lgl:py-5"
+              method="POST"
+              onSubmit={submitHandler}
+            >
               {errMsg && (
-                <p className="py-3 bg-gradient-to-r from-[#1e2024] to-[#23272b] shadow-shadowOne text-center text-orange-500 text-base tracking-wide animate-bounce">
+                <p className="py-3 glass-card text-center text-orange-400 text-base tracking-wide">
                   {errMsg}
                 </p>
               )}
               {successMsg && (
-                <p className="py-3 bg-gradient-to-r from-[#1e2024] to-[#23272b] shadow-shadowOne text-center text-green-500 text-base tracking-wide animate-bounce">
+                <p className="py-3 glass-card text-center text-green-400 text-base tracking-wide">
                   {successMsg}
                 </p>
               )}
@@ -98,7 +109,7 @@ const Contact = () => {
                   <input
                     onChange={(e) => setUsername(e.target.value)}
                     value={username}
-                     name="name"
+                    name="name"
                     className={`${
                       errMsg === "Username is required!" &&
                       "outline-designColor"
@@ -169,20 +180,20 @@ const Contact = () => {
               </div>
               <div className="w-full">
                 <button
-                  type='submit'
+                  type="submit"
                   disabled={sending}
                   className="w-full h-12 bg-[#141518] rounded-lg text-base text-gray-400 tracking-wider uppercase hover:text-white duration-300 hover:border-[1px] hover:border-designColor border-transparent"
                 >
-                  {sending?"Sending...":"Submit"}
+                  {sending ? "Sending..." : "Submit"}
                 </button>
               </div>
               {errMsg && (
-                <p className="py-3 bg-gradient-to-r from-[#1e2024] to-[#23272b] shadow-shadowOne text-center text-orange-500 text-base tracking-wide animate-bounce">
+                <p className="py-3 glass-card text-center text-orange-400 text-base tracking-wide">
                   {errMsg}
                 </p>
               )}
               {successMsg && (
-                <p className="py-3 bg-gradient-to-r from-[#1e2024] to-[#23272b] shadow-shadowOne text-center text-green-500 text-base tracking-wide animate-bounce">
+                <p className="py-3 glass-card text-center text-green-400 text-base tracking-wide">
                   {successMsg}
                 </p>
               )}
@@ -194,4 +205,4 @@ const Contact = () => {
   );
 };
 
-export default Contact
+export default Contact;

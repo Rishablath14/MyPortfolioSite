@@ -7,10 +7,12 @@ const LeftBanner = () => {
   return (
     <div className="w-full xl:w-1/2 flex flex-col gap-6">
       <div className="flex flex-col gap-4">
-        <span className=" text-lg font-normal">WELCOME TO MY WORLD</span>
-        <h1 className="text-3xl sml:text-5xl sm:text-4xl md:text-6xl  font-bold text-white">
-          Hi, I'm{" "}
-          <span className="text-designColor capitalize">Rishab Lath</span>
+        <span className="text-xs uppercase tracking-[0.4em] text-white/60">
+          Building digital experiences
+        </span>
+        <h1 className="text-3xl sml:text-5xl sm:text-4xl md:text-6xl font-bold text-white">
+          Hi, I&apos;m{" "}
+          <span className="gradient-text capitalize">Rishab Lath</span>
         </h1>
         <h2 className="sml:text-4xl font-bold text-white text-[1.7rem]">
           a{" "}
@@ -27,7 +29,7 @@ const LeftBanner = () => {
             />
           </span>
         </h2>
-        <p className="text-justify font-bodyFont leading-6 tracking-wide">
+        <p className="text-justify font-bodyFont leading-7 tracking-wide text-white/70">
           Aspiring Fullstack Developer with expertise in building feature-rich
           web applications using React.js, Next.js, Node.js, Three.js, and
           MongoDB. I specialize in crafting responsive, user-focused designs
@@ -39,9 +41,17 @@ const LeftBanner = () => {
           design and development. Committed to delivering high-quality solutions
           in dynamic environments.
         </p>
+        <div className="flex flex-wrap items-center gap-4 mt-2">
+          <a href="#projects" className="pill-accent">
+            View Work
+          </a>
+          <a href="#contact" className="pill-button">
+            Let&apos;s Talk
+          </a>
+        </div>
         <div className="flex flex-col xl:flex-row gap-6 xl:gap-2 justify-between mt-2">
           <div>
-            <h2 className="text-base uppercase font-titleFont mb-4">
+            <h2 className="text-xs uppercase font-titleFont tracking-[0.3em] mb-4 text-white/70">
               Find me in
             </h2>
             <div className="flex gap-4">
@@ -66,8 +76,8 @@ const LeftBanner = () => {
             </div>
           </div>
           <div>
-            <h2 className="text-base uppercase font-titleFont mb-4">
-              BEST SKILL ON
+            <h2 className="text-xs uppercase font-titleFont tracking-[0.3em] mb-4 text-white/70">
+              Toolkit
             </h2>
             <div className="flex gap-4">
               <span className="bannerIcon">
@@ -86,7 +96,7 @@ const LeftBanner = () => {
           </div>
         </div>
         <div>
-          <h2 className="text-base uppercase font-titleFont mb-4 mt-2">
+          <h2 className="text-xs uppercase font-titleFont tracking-[0.3em] mb-4 mt-2 text-white/70">
             My Resume
           </h2>
           <div className="flex gap-2">

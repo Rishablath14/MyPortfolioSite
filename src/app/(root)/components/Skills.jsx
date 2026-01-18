@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { BiLogoPostgresql } from "react-icons/bi";
-import { TbBrandNextjs,TbBrandFramerMotion } from "react-icons/tb";
+import { TbBrandNextjs, TbBrandFramerMotion } from "react-icons/tb";
 import { PiGitMergeBold } from "react-icons/pi";
 import {
   FaNodeJs,
@@ -25,38 +25,40 @@ import {
   SiTailwindcss,
   SiDotnet,
   SiReacthookform,
-  SiZod
+  SiZod,
 } from "react-icons/si";
-
 
 const SkillsScroll = () => {
   return (
-    <section className="skills-scroll-container w-full py-12 md:py-20 border-b-[1px] border-b-black">
+    <section className="skills-scroll-container w-full py-12 md:py-20 border-b border-white/10 relative overflow-hidden">
+      <div className="pointer-events-none absolute right-[-10%] top-4 text-[4.5rem] md:text-[7rem] font-titleFont font-bold text-white/5 tracking-[0.2em]">
+        Stack
+      </div>
       <div className="w-full inline-flex flex-nowrap overflow-hidden">
         <ul className="flex items-center gap-20 md:gap-40 justify-center md:justify-start infinite-scroll">
           <li className="text-6xl md:text-8xl ml-20 md:ml-40">
-            <TbBrandNextjs className="imgicon1"/>
+            <TbBrandNextjs className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <TbBrandFramerMotion className="imgicon1"/>
+            <TbBrandFramerMotion className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <SiDotnet className="imgicon1"/>
+            <SiDotnet className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <SiJavascript className="imgicon1"/>
+            <SiJavascript className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <FaReact className="imgicon1"/>
+            <FaReact className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <FaNodeJs className="imgicon1"/>
+            <FaNodeJs className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <SiExpress className="imgicon1"/>
+            <SiExpress className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <FaDocker className="imgicon1"/>
+            <FaDocker className="imgicon1" />
           </li>
         </ul>
         <ul
@@ -64,56 +66,56 @@ const SkillsScroll = () => {
           aria-hidden="true"
         >
           <li className="text-6xl md:text-8xl  ml-20 md:ml-40">
-            <TbBrandNextjs  className="imgicon1"/>
+            <TbBrandNextjs className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <TbBrandFramerMotion className="imgicon1"/>
+            <TbBrandFramerMotion className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <SiDotnet className="imgicon1"/>
+            <SiDotnet className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <SiJavascript  className="imgicon1"/>
+            <SiJavascript className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <FaReact  className="imgicon1"/>
+            <FaReact className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <FaNodeJs  className="imgicon1"/>
+            <FaNodeJs className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <SiExpress  className="imgicon1"/>
+            <SiExpress className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <FaDocker  className="imgicon1"/>
+            <FaDocker className="imgicon1" />
           </li>
         </ul>
       </div>
       <div className="w-full inline-flex flex-nowrap overflow-hidden my-12">
         <ul className="flex items-center gap-20 md:gap-40 justify-center md:justify-start infinite-scroll2">
           <li className="text-6xl md:text-8xl  ml-20 md:ml-40">
-            <FaBootstrap  className="imgicon1"/>
+            <FaBootstrap className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-          <SiCss3  className="imgicon1"/>
+            <SiCss3 className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <SiTailwindcss  className="imgicon1"/>
+            <SiTailwindcss className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <SiReacthookform  className="imgicon1"/>
+            <SiReacthookform className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <FaPython  className="imgicon1"/>
+            <FaPython className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <FaGithubSquare  className="imgicon1"/>
+            <FaGithubSquare className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <SiMongodb  className="imgicon1"/>
+            <SiMongodb className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-          <FaHtml5  className="imgicon1"/>
+            <FaHtml5 className="imgicon1" />
           </li>
         </ul>
         <ul
@@ -121,56 +123,56 @@ const SkillsScroll = () => {
           aria-hidden="true"
         >
           <li className="text-6xl md:text-8xl  ml-20 md:ml-40">
-            <FaBootstrap  className="imgicon1"/>
+            <FaBootstrap className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-          <SiCss3  className="imgicon1"/>
+            <SiCss3 className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <SiTailwindcss  className="imgicon1"/>
+            <SiTailwindcss className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <SiReacthookform  className="imgicon1"/>
+            <SiReacthookform className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <FaPython  className="imgicon1"/>
+            <FaPython className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <FaGithubSquare  className="imgicon1"/>
+            <FaGithubSquare className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <SiMongodb  className="imgicon1"/>
+            <SiMongodb className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-          <FaHtml5  className="imgicon1"/>
+            <FaHtml5 className="imgicon1" />
           </li>
         </ul>
       </div>
       <div className="w-full inline-flex flex-nowrap overflow-hidden">
         <ul className="flex items-center gap-20 md:gap-40 justify-center md:justify-start delay-100 infinite-scroll3">
           <li className="text-6xl md:text-8xl  ml-20 md:ml-40">
-            <PiGitMergeBold  className="imgicon1"/>
+            <PiGitMergeBold className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <SiSocketdotio  className="imgicon1"/>
+            <SiSocketdotio className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <SiFirebase  className="imgicon1"/>
+            <SiFirebase className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <SiZod  className="imgicon1"/>
+            <SiZod className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <BiLogoPostgresql  className="imgicon1"/>
+            <BiLogoPostgresql className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <SiMysql  className="imgicon1"/>
+            <SiMysql className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <SiGraphql  className="imgicon1"/>
+            <SiGraphql className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <SiRedux  className="imgicon1"/>
+            <SiRedux className="imgicon1" />
           </li>
         </ul>
         <ul
@@ -178,28 +180,28 @@ const SkillsScroll = () => {
           aria-hidden="true"
         >
           <li className="text-6xl md:text-8xl  ml-20 md:ml-40">
-            <PiGitMergeBold  className="imgicon1"/>
+            <PiGitMergeBold className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <SiSocketdotio  className="imgicon1"/>
+            <SiSocketdotio className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <SiFirebase  className="imgicon1"/>
+            <SiFirebase className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl">
-            <SiZod  className="imgicon1"/>
+            <SiZod className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <BiLogoPostgresql  className="imgicon1"/>
+            <BiLogoPostgresql className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <SiMysql  className="imgicon1"/>
+            <SiMysql className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <SiGraphql  className="imgicon1"/>
+            <SiGraphql className="imgicon1" />
           </li>
           <li className="text-6xl md:text-8xl ">
-            <SiRedux  className="imgicon1"/>
+            <SiRedux className="imgicon1" />
           </li>
         </ul>
       </div>

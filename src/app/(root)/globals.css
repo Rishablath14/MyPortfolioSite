@@ -1,11 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+    :root {
+        --bg-0: #0b0f12;
+        --bg-1: #0f151b;
+        --bg-2: #101820;
+        --accent-0: #ff6a3d;
+        --accent-1: #ffb457;
+        --glow-0: rgba(255, 106, 61, 0.18);
+        --glow-1: rgba(87, 230, 200, 0.18);
+    }
+
+    body {
+        background: radial-gradient(1200px 700px at 10% -10%, rgba(87, 230, 200, 0.08), transparent 60%),
+            radial-gradient(900px 600px at 90% 10%, rgba(255, 180, 87, 0.12), transparent 55%),
+            linear-gradient(180deg, var(--bg-0) 0%, var(--bg-1) 40%, var(--bg-2) 100%);
+        color: #e7edf5;
+        font-family: "Manrope", sans-serif;
+        letter-spacing: 0.01em;
+    }
+
+    * {
+        scroll-behavior: smooth;
+    }
+}
 ::-webkit-scrollbar{display: none;}
 ::selection{color: #ffffe0;background-color: rgba(10,20,30,0.2);}
 @layer components{
     .bannerIcon{
-        @apply w-16 h-16 bg-black bg-opacity-25 text-gray-200 text-xl inline-flex items-center justify-center rounded-md shadow-shadowOne hover:bg-opacity-40 hover:-translate-y-1 transition-all hover:text-designColor cursor-pointer duration-300;
+        @apply w-14 h-14 bg-white/5 text-gray-200 text-xl inline-flex items-center justify-center rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.35)] border border-white/10 hover:bg-white/10 hover:-translate-y-1 transition-all hover:text-designColor cursor-pointer duration-300;
     }
     .resumeLi {
     @apply w-full h-20 bg-black bg-opacity-25 text-xl text-gray-300 flex justify-center cursor-pointer hover:bg-opacity-40 duration-300 items-center border-[1px] rounded-none;
@@ -20,7 +45,7 @@
     @apply w-full rounded-lg border-b-[1px] border-b-gray-600 bg-[#191b1e] text-lightText px-4 py-2 active:outline-none focus-visible:outline-designColor outline-none focus-visible:border-b-transparent duration-300 resize-none
 }
 }
-.Typewriter__cursor{color: rgb(255 1 79 / 1);}
+.Typewriter__cursor{color: #ffb457;}
 .progress-bar {
         position: fixed;
         top: 0;
@@ -28,9 +53,76 @@
         right: 0;
         height: 10px;
         z-index: 99;
-        background: linear-gradient(#ff014f,#3f3f3f);
+        background: linear-gradient(90deg, #ff6a3d, #ffb457, #57e6c8);
         transform-origin: 0%;
       }
+.site-shell {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+.site-shell::before,
+.site-shell::after {
+    content: "";
+    position: absolute;
+    width: 46vw;
+    height: 46vw;
+    border-radius: 999px;
+    filter: blur(80px);
+    opacity: 0.35;
+    z-index: 0;
+    animation: float-slow 18s ease-in-out infinite;
+}
+.site-shell::before {
+    top: -15vw;
+    left: -10vw;
+    background: radial-gradient(circle, var(--glow-1), transparent 65%);
+}
+.site-shell::after {
+    bottom: -18vw;
+    right: -6vw;
+    background: radial-gradient(circle, var(--glow-0), transparent 65%);
+    animation-delay: 4s;
+}
+.grid-overlay {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 140px 140px;
+    mask-image: radial-gradient(circle at 50% 20%, rgba(0, 0, 0, 0.7), transparent 65%);
+    pointer-events: none;
+}
+.glass-card {
+    background: rgba(15, 18, 22, 0.66);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(18px);
+}
+.gradient-text {
+    background: linear-gradient(120deg, #ffffff 0%, #ffb457 40%, #57e6c8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.pill-button {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm uppercase tracking-[0.18em] text-white/80 transition-all duration-300 hover:border-white/50 hover:text-white;
+}
+.pill-accent {
+    @apply inline-flex items-center gap-2 rounded-full bg-designColor px-6 py-3 text-sm uppercase tracking-[0.18em] text-black transition-all duration-300 hover:brightness-110;
+}
+.glass-select {
+    @apply rounded-full border border-white/20 bg-black/30 pl-4 pr-10 py-2 text-xs uppercase tracking-[0.2em] text-white/80 backdrop-blur appearance-none;
+}
+.section-divider {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+}
+.imgicon1 {
+    color: rgba(255, 255, 255, 0.55);
+    filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.35));
+    transition: color 0.3s ease;
+}
+.skills-scroll-container:hover .imgicon1 {
+    color: rgba(255, 255, 255, 0.85);
+}
 .active {
     color: white;
 }
@@ -57,6 +149,11 @@
     from{ transform: translateX(-100%) }
     to{ transform: translateX(0)}
  }   
+@keyframes float-slow {
+    0% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(6vw, 4vw, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+}
 .scrollbar-hide::-webkit-scrollbar{
     display: none;
 }

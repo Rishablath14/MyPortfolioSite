@@ -12,9 +12,10 @@ function App() {
   return (
     <>
     <Preloader/>
-    <div className="w-full h-auto bg-bodyColor text-lightText">
+    <div className="w-full h-auto text-lightText site-shell">
+        <div className="absolute inset-0 grid-overlay opacity-50" />
         <Navbar />
-      <div className="w-full px-4 md:px-16">
+      <div className="relative z-10 w-full px-4 md:px-16 pt-28">
         <Banner />
         <Features />
         <SkillsScroll/>

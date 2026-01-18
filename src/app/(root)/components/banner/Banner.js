@@ -40,7 +40,7 @@ const Banner = () => {
   return (
     <section
       id="home"
-      className="w-full pt-10 pb-20 flex flex-col gap-10 xl:gap-0 xl:flex-row items-center border-b-[1px] font-titleFont border-b-black"
+      className="w-full pt-20 pb-24 flex flex-col gap-12 xl:gap-12 xl:flex-row items-center border-b border-white/10 font-titleFont relative"
     >
       <LeftBanner />
       <RightBanner />

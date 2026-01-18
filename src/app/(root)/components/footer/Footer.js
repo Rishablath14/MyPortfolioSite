@@ -5,7 +5,7 @@ import { logo } from "../../../assets/index";
 
 const Footer = () => {
   return (
-    <div className="w-full py-20 h-auto border-b-[1px] border-b-black grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-4 gap-8">
+    <div className="w-full py-20 h-auto border-b border-white/10 grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-4 gap-8">
       <div className="w-full h-full flex flex-col gap-8">
         <Image className="w-32 h-auto" src={logo} alt="logo" />
         <div className="flex gap-4">

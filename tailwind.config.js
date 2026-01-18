@@ -19,14 +19,14 @@ module.exports = {
         xl: "1280px",
       },
       fontFamily: {
-        bodyFont: ["Poppins", "sans-serif"],
-        titleFont: ["SpaceGrotesk", "sans-serif"],
+        bodyFont: ["Manrope", "sans-serif"],
+        titleFont: ["Syne", "sans-serif"],
       },
       colors: {
-        bodyColor: "#212428",
+        bodyColor: "#0e1216",
         lightText: "#c4cfde",
         boxBg: "linear-gradient(145deg, #1e2024, #23272b)",
-        designColor: "#ff014f",
+        designColor: "#ff6a3d",
       },
       boxShadow: {
         shadowOne: "10px 10px 19px #1c1e22, -10px -10px 19px #262a2e",

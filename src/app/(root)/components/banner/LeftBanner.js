@@ -19,7 +19,7 @@ const LeftBanner = () => {
           <span className="inline-block">
             <Typewriter
               options={{
-                strings: ["Digital Marketer", "Web Developer", "Programmer"],
+                strings: ["Digital Marketer", "Software Developer", "Graphic Designer"],
                 autoStart: true,
                 loop: true,
                 cursor: "|",

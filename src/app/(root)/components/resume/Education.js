@@ -50,7 +50,7 @@ const Education = () => {
             title="Software Developer"
             subTitle="Magure Inc. - ( November 2024 - Present )"
             result="Raipur, Chhattisgarh"
-            des="In my current role as a Associate Software Development Engineer, I am driving key innovations to enhance the IGNYTE platform, empowering 1000+ startups and businesses globally. My work focuses on developing robust, secure features that prioritize scalability, utilizing cutting-edge technologies like React.js, TypeScript, .NET Core, and Blazor Pages. By collaborating effectively within a fast-paced Agile environment, I’ve contributed to improving the platform’s efficiency and performance metrics while aligning technical outcomes with strategic business objectives."
+            des="At Magure, I work as a Full Stack Engineer, delivering scalable web and mobile solutions across frontend and backend systems. From building high-performance interfaces to developing backend services in .NET and optimizing production deployments, I take ownership of features end-to-end. I thrive in fast-paced Agile environments, collaborating closely with teams to ship reliable, user-focused products that align with business goals. My focus is on writing clean, efficient code and continuously evolving as a developer who builds with both speed and purpose."
           />
         </div>
         <div className="pt-6 lgl:pt-14 min-h-[350px] w-full border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">

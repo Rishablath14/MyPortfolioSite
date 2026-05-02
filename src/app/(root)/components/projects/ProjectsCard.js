@@ -7,10 +7,10 @@ import Image from "next/image";
 const ProjectsCard = ({ title, des, src, link, stack = [], outcome }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 28, filter: "blur(6px)" }}
+      initial={{ opacity: 0, y: 20 }}
       viewport={{ once: true }}
       transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      whileInView={{ opacity: 1, y: 0 }}
       className="premium-card project-card w-full p-4 xl:px-8 h-auto xl:py-8 rounded-lg flex flex-col group"
     >
       <div className="premium-card-line" aria-hidden="true" />

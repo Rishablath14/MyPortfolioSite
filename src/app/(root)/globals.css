@@ -548,16 +548,16 @@
 }
 .infinite-scroll{
     display: flex;
-    animation: infinite-scroll 10s linear infinite;
+    animation: infinite-scroll 18s linear infinite;
 }
 .infinite-scroll3{
     display: flex;
-    animation: infinite-scroll 10s linear infinite;
+    animation: infinite-scroll 18s linear infinite;
     animation-delay: 2s;
 }
 .infinite-scroll2{
     display: flex;
-    animation: infinite-scroll2 10s linear infinite;
+    animation: infinite-scroll2 18s linear infinite;
 }
  @keyframes infinite-scroll 
  {    
@@ -858,16 +858,29 @@ option{
     animation-delay: 0.4s;
 }
 
-.scroll-signature {
+.model-load-button {
     position: absolute;
-    top: 18rem;
-    right: -12vw;
-    z-index: 0;
-    width: min(58vw, 760px);
-    height: calc(100% - 28rem);
-    min-height: 2200px;
-    pointer-events: none;
-    mix-blend-mode: screen;
+    left: 50%;
+    bottom: 1.25rem;
+    z-index: 2;
+    transform: translateX(-50%);
+    border: 1px solid rgba(87, 230, 200, 0.34);
+    border-radius: 999px;
+    background:
+        linear-gradient(90deg, rgba(87, 230, 200, 0.14), rgba(255, 180, 87, 0.12)),
+        rgba(8, 12, 15, 0.9);
+    color: white;
+    padding: 0.75rem 1.1rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.model-load-button:hover {
+    border-color: rgba(255, 180, 87, 0.54);
+    transform: translateX(-50%) translateY(-2px);
 }
 
 .ambient-wow {
@@ -890,6 +903,7 @@ option{
         conic-gradient(from 90deg, transparent, rgba(87, 230, 200, 0.12), transparent, rgba(255, 180, 87, 0.13), transparent),
         radial-gradient(circle, transparent 55%, rgba(255, 255, 255, 0.04) 56% 57%, transparent 58%);
     mask-image: radial-gradient(circle, transparent 42%, #000 43%);
+    animation: ambient-turn 28s linear infinite;
 }
 
 .ambient-rings-secondary {
@@ -898,16 +912,6 @@ option{
     top: 58vh;
     width: clamp(5rem, 10vw, 9rem);
     opacity: 0.52;
-}
-
-.ambient-thread {
-    position: absolute;
-    left: min(5vw, 4rem);
-    top: 34rem;
-    width: 11rem;
-    min-height: 920px;
-    opacity: 0.72;
-    mix-blend-mode: screen;
 }
 
 .kinetic-slice {
@@ -945,13 +949,6 @@ option{
     transform: rotate(18deg);
 }
 
-.kinetic-slice-three {
-    left: 6vw;
-    bottom: 12vh;
-    animation-delay: 1.7s;
-    transform: rotate(9deg);
-}
-
 .kinetic-rule {
     position: fixed;
     z-index: 0;
@@ -971,15 +968,17 @@ option{
 }
 
 .kinetic-rule-two {
-    left: 9vw;
-    top: 58vh;
-    transform: rotate(14deg);
-    animation-delay: 1.8s;
+    display: none;
 }
 
 @keyframes kinetic-drift {
     0%, 100% { opacity: 0.24; translate: 0 0; }
     50% { opacity: 0.74; translate: 0 -14px; }
+}
+
+@keyframes ambient-turn {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 @keyframes ladder-glide {
@@ -1007,6 +1006,49 @@ option{
 }
 
 @media (max-width: 640px) {
+    .site-shell::before,
+    .site-shell::after,
+    .model-stage::before,
+    .model-halo::before,
+    .model-halo::after,
+    .service-card::before,
+    .service-card-shine,
+    .service-card-corner {
+        display: none;
+    }
+
+    .nav-shell {
+        backdrop-filter: none;
+    }
+
+    .glass-card {
+        backdrop-filter: none;
+    }
+
+    .premium-card:hover,
+    .service-card:hover,
+    .resume-card:hover {
+        transform: none;
+    }
+
+    .service-card:hover .service-icon {
+        transform: none;
+    }
+
+    .skills-scroll-container:hover .imgicon1 {
+        color: rgba(255, 255, 255, 0.55);
+    }
+
+    .infinite-scroll,
+    .infinite-scroll2,
+    .infinite-scroll3 {
+        animation-duration: 34s;
+    }
+
+    .role-rotator span {
+        animation-duration: 12s;
+    }
+
     .resume-timeline {
         gap: 1.15rem;
         padding-left: 1.05rem;
@@ -1050,16 +1092,8 @@ option{
         display: none;
     }
 
-    .scroll-signature {
-        right: -34vw;
-        width: 110vw;
-        opacity: 0.35;
-    }
-
     .ambient-rings,
-    .ambient-thread,
     .ambient-rings-secondary,
-    .kinetic-slice-three,
     .kinetic-rule,
     .services-orbit {
         display: none;
@@ -1089,5 +1123,16 @@ option{
         animation-iteration-count: 1 !important;
         scroll-behavior: auto !important;
         transition-duration: 0.001ms !important;
+    }
+
+    .ambient-wow,
+    .site-shell::before,
+    .site-shell::after,
+    .model-stage::before,
+    .model-halo::before,
+    .model-halo::after,
+    .service-card-shine,
+    .services-orbit {
+        display: none !important;
     }
 }

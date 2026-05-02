@@ -14,7 +14,11 @@ const animationUrls = {
   backflip: personAnim4,
 };
 
-const Person = memo(function Person({ animation = "rest", compact = false }) {
+const Person = memo(function Person({
+  animation = "rest",
+  compact = false,
+  interactive = true,
+}) {
   const personRef = useRef(null);
   const headRef = useRef(null);
   const [ready, setReady] = useState(false);
@@ -47,7 +51,7 @@ const Person = memo(function Person({ animation = "rest", compact = false }) {
   }, [scene]);
 
   useFrame((state) => {
-    if (!ready || !headRef.current) return;
+    if (!ready || !headRef.current || !interactive) return;
 
     if (animation === "rest") {
       target.set(state.pointer.x * 2.1, state.pointer.y * 1.55, 2.4);

@@ -17,11 +17,17 @@ const RightBanner = () => {
   const [selectedAnimation, setSelectedAnimation] = useState("rest");
   const [isDesktop, setIsDesktop] = useState(false);
   const [compact, setCompact] = useState(false);
+  const [lowPower, setLowPower] = useState(false);
 
   useEffect(() => {
     const syncViewport = () => {
-      setIsDesktop(window.innerWidth >= 1280);
-      setCompact(window.innerWidth < 640);
+      const memory = navigator.deviceMemory || 8;
+      const cores = navigator.hardwareConcurrency || 8;
+      const isCompact = window.innerWidth < 640;
+      const isLowPower = isCompact || memory < 4 || cores < 4;
+      setIsDesktop(window.innerWidth >= 1280 && !isLowPower);
+      setCompact(isCompact);
+      setLowPower(isLowPower);
     };
 
     syncViewport();
@@ -43,13 +49,13 @@ const RightBanner = () => {
         <div className="model-halo" aria-hidden="true" />
         <Canvas
           camera={camera}
-          dpr={[1, 1.45]}
+          dpr={lowPower ? [0.85, 1] : [1, 1.35]}
           gl={{
-            antialias: true,
+            antialias: !lowPower,
             alpha: true,
             powerPreference: "high-performance",
           }}
-          performance={{ min: 0.5 }}
+          performance={{ min: lowPower ? 0.35 : 0.5 }}
         >
           {isDesktop ? (
             <OrbitControls
@@ -62,7 +68,7 @@ const RightBanner = () => {
           <ambientLight intensity={1.35} />
           <directionalLight position={[4, 6, 4]} intensity={1.2} />
           <Suspense fallback={<HumanLoader />}>
-            <Person animation={selectedAnimation} compact={compact} />
+            <Person animation={selectedAnimation} compact={compact} interactive={!lowPower} />
           </Suspense>
         </Canvas>
 

@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 const Card = ({ title, des, icon }) => {
   return (
     <motion.div
-      initial={{ y: 26, opacity: 0, filter: "blur(6px)" }}
+      initial={{ y: 18, opacity: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
-      whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+      whileInView={{ y: 0, opacity: 1 }}
       className="service-card w-full px-6 md:px-8 min-h-72 py-8 rounded-lg flex items-center group"
     >
       <div className="service-card-shine" aria-hidden="true" />

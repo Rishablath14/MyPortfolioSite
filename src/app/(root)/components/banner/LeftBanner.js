@@ -12,7 +12,7 @@ const LeftBanner = () => {
           Hi, I&apos;m{" "}
           <span className="gradient-text capitalize">Rishab Lath</span>
         </h1>
-        <h2 className="sml:text-4xl font-bold text-white text-[1.7rem]">
+        <h2 className="sml:text-4xl font-bold text-white text-[1.35rem]">
           a{" "}
           <span className="role-rotator" aria-label="Software Developer, Digital Marketer, Graphic Designer">
             <span>Software Developer</span>

@@ -8,7 +8,25 @@ const handler = async (event) => {
     };
   }
 
-  const { subject, message } = JSON.parse(event.body);
+  let payload;
+  try {
+    payload = JSON.parse(event.body || "{}");
+  } catch {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ error: 'Invalid JSON payload' }),
+    };
+  }
+
+  const subject = String(payload.subject || "").replace(/[\r\n]/g, " ").slice(0, 120);
+  const message = String(payload.message || "").slice(0, 4000);
+
+  if (!subject || !message) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ error: 'Subject and message are required' }),
+    };
+  }
 
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",

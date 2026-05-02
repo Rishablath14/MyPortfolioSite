@@ -6,9 +6,9 @@ const GoogleAnalytics = () => {
     <>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=G-T8T48V3282`}
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
-      <Script id="google-analytics" strategy="afterInteractive">
+      <Script id="google-analytics" strategy="lazyOnload">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag() {dataLayer.push(arguments);}

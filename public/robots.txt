@@ -1,3 +1,4 @@
 User-agent: *
-Disallow:
+Disallow: /dashboard
+
 Sitemap: https://rishablathportfolio.netlify.app/sitemap.xml

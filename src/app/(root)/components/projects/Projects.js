@@ -38,7 +38,7 @@ const Projects = memo(() => {
       <div className="flex justify-center items-center text-center">
         <Reveal>
           <Title
-            title="VISIT MY PROJECTS AND GIVE YOUR VALUABLE FEEDBACKS"
+            title="Selected builds with product context"
             des="My Projects"
           />
         </Reveal>
@@ -47,54 +47,68 @@ const Projects = memo(() => {
         <Reveal delay={0.05}>
           <ProjectsCard
             title="RLexicon – Multi-Tenant Blog SaaS Platform"
-            des="RLexicon is a scalable SaaS platform built for managing blogs and publications efficiently. Using Next.js 15, TypeScript, and Prisma, it supports 100+ tenants with secure role-based authentication via KindAuth and real-time updates. Features include a Notion-style rich text editor, seamless Stripe integration for subscriptions, and optimized performance with SSR techniques. Powered by Supabase, RLexicon delivers a responsive, SEO-friendly, and user-focused experience, making it ideal for modern blogging needs.This platform not only enhances productivity but also delivers a seamless experience for users across diverse business contexts."
+            des="A scalable publishing platform for tenant-based content operations, built around secure roles, rich editing, subscriptions, and search-friendly server-rendered pages."
+            outcome="SaaS architecture, subscriptions, and editorial workflow"
             src={projectFive}
             link={"https://rlexicon.vercel.app"}
+            stack={["Next.js", "TypeScript", "Prisma", "Supabase", "Stripe"]}
           />
         </Reveal>
         <Reveal delay={0.1}>
           <ProjectsCard
             title="Bru Speciality Chemicals Website"
-            des="I created a stunning website for BRU Speciality Chemicals, a leading manufacturer of aroma chemicals for various industries. The website showcases the company's expertise, quality, and innovation in producing a wide range of aroma chemicals. I used NEXTjs, a React framework, to build a fast, scalable, and SEO-friendly website that delivers an amazing user experience. I also added dynamic and interactive elements to the website using Framer motion, a library for animations. I followed SEO best practices, such as optimizing the site speed, structure, and content, to boost the website's ranking."
+            des="A brand and product website for an aroma chemicals manufacturer, structured to communicate expertise, product trust, and discoverability across search-led buyer journeys."
+            outcome="Industrial brand presence with SEO-focused structure"
             src={projectSeven}
             link={"https://www.bruorg.com"}
+            stack={["Next.js", "React", "Framer Motion", "SEO"]}
           />
         </Reveal>
         <Reveal delay={0.15}>
           <ProjectsCard
             title="Valfom Industries Website"
-            des="I designed and developed this website for Valfom Industries, a leading supplier of flavours, fragrances, and essential oils. The website showcases the company's products, services, and values, and provides an engaging user experience. I used Vite js, HTML, CSS, and JS to create a fast, responsive, and modern website, and applied GSAP for eye-catching animations to enhance the visual appeal. I also implemented SEO best practices, such as writing concise meta descriptions, using relevant keywords, and creating clear headings, to increase the website's visibility and ranking on search engines."
+            des="A responsive business website for flavours, fragrances, and essential oils with clear product storytelling, performance-minded pages, and interaction design powered by GSAP."
+            outcome="Responsive product storytelling for B2B discovery"
             src={projectSix}
             link={"https://www.valfom.net"}
+            stack={["Vite", "HTML", "CSS", "JavaScript", "GSAP"]}
           />
         </Reveal>
         <Reveal delay={0.2}>
           <ProjectsCard
-            title="Ashoka Printing Works webSite"
-            des="I developed a Dynamic Customer Data Management Website for Ashoka Printing Works, leveraging Next.js, TailwindCSS, Framer Motion, and Shadcn UI. This robust platform includes authentication and authorization features, ensuring secure access to customer data. I implemented advanced data handling capabilities using Tanstack Data Table, providing efficient pagination, sorting, and filtering options. To enhance performance and user experience, I utilized global state management with Context API. Additionally, I integrated dynamic charts into the dashboard, enabling them to clearly visualize their performance metrics."
+            title="Ashoka Printing Works Platform"
+            des="A customer data management platform with authenticated workflows, advanced tables, filtering, pagination, and dashboard charts for operational visibility."
+            outcome="Internal dashboard with data-heavy workflows"
             src={projectEight}
             link={"https://ashokaprintingworks.netlify.app/"}
+            stack={["Next.js", "Tailwind", "Shadcn UI", "TanStack Table"]}
           />
         </Reveal>
         <Reveal delay={0.25}>
           <ProjectsCard
             title="LinkedIn Clone – Fullstack Web Application"
-            des="This LinkedIn Clone is a feature-rich, fully-functional social networking platform built using the MERN stack (MongoDB, Express.js, React.js, Node.js). Designed to emulate LinkedIn’s core functionalities, this project showcases my expertise in frontend and backend development, with added email notification capabilities to enhance user engagement. The platform offers a seamless, secure, and responsive user experience. Whether you need a dynamic social platform or a sophisticated web application, this project demonstrates my ability to deliver comprehensive and scalable solutions."
+            des="A MERN social networking application covering authentication, profiles, posts, engagement flows, backend APIs, database modeling, and email notifications."
+            outcome="Full-stack social product architecture"
             src={projectFour}
             link={"https://github.com/Rishablath14/Linkedin_CLone"}
+            stack={["MongoDB", "Express", "React", "Node.js", "Email"]}
           />
         </Reveal>
         <Reveal delay={0.3}>
           <ProjectsCard
             title="Girls' Armour Foundation Website"
-            des="This NGO website is designed and developed with accessibility and ease of use in mind, ensuring that you can effortlessly navigate through our stories, projects, and opportunities to get involved. Whether you're interested in supporting our cause, seeking help, donating money or simply learning more about the incredible journey of 'Girl's Armour Foundation,' this platform is your gateway to empowerment. As the developer behind this website, I take immense pride in contributing to the online presence of an organization dedicated to such a noble cause that empower girls and make thier life better."
+            des="An NGO website focused on clear navigation, accessible stories, donation intent, volunteer pathways, and trust-building content for a mission-led organization."
+            outcome="Accessible nonprofit storytelling and conversion paths"
             src={projectThree}
             link={"https://www.girlsarmour.in"}
+            stack={["Web Design", "Accessibility", "SEO", "Content UX"]}
           />
         </Reveal>
       </div>
     </section>
   );
 });
+
+Projects.displayName = "Projects";
 
 export default Projects;

@@ -5,13 +5,15 @@ import Image from "next/image";
 
 const ContactLeft = () => {
   return (
-    <div className="w-full lgl:w-[35%] h-full glass-card p-4 lgl:p-8 rounded-3xl flex flex-col gap-8 justify-center">
+    <div className="premium-card contact-panel w-full lgl:w-[35%] h-full p-4 lgl:p-8 rounded-lg flex flex-col gap-8 justify-center">
+      <div className="premium-card-line" aria-hidden="true" />
       <Image
-        className="w-full h-64 object-cover rounded-lg mb-2 mix-blend-exclusion"
+        className="relative z-10 w-full h-64 object-cover rounded-lg mb-2 saturate-110 contrast-105"
         src={contactImg}
-        alt="contactImg"
+        alt="Rishab Lath contact portrait"
+        sizes="(min-width: 1024px) 35vw, 100vw"
       />
-      <div className="flex flex-col gap-4">
+      <div className="relative z-10 flex flex-col gap-4">
         <h3 className="text-3xl font-bold text-white">Rishab Lath</h3>
         <p className="text-lg font-normal text-white/70">
           Software Developer & Digital Marketer
@@ -23,7 +25,7 @@ const ContactLeft = () => {
         </p>
         <p className="text-base text-white/70 flex items-center gap-2">
           Phone:{" "}
-          <a href="tel:09039002468">
+          <a href="tel:+919039002468">
             <span className="text-lightText">+91 9039002468</span>
           </a>
         </p>
@@ -34,25 +36,39 @@ const ContactLeft = () => {
           </a>
         </p>
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="relative z-10 flex flex-col gap-4">
         <h2 className="text-xs uppercase font-titleFont tracking-[0.3em] mb-4 text-white/70">
           Find me in
         </h2>
         <div className="flex gap-4">
-          <a href="https://www.facebook.com/rishablath.14/" target="blank">
-            {" "}
+          <a
+            href="https://www.facebook.com/rishablath.14/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open Rishab Lath on Facebook"
+          >
             <span className="bannerIcon">
-              <FaFacebookF />
+              <FaFacebookF aria-hidden="true" />
             </span>
           </a>
-          <a href="https://www.instagram.com/rishablath.14/" target="blank">
+          <a
+            href="https://www.instagram.com/rishablath.14/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open Rishab Lath on Instagram"
+          >
             <span className="bannerIcon">
-              <FaInstagram />
+              <FaInstagram aria-hidden="true" />
             </span>
           </a>
-          <a href="https://www.linkedin.com/in/rishab-lath/" target="blank">
+          <a
+            href="https://www.linkedin.com/in/rishab-lath/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open Rishab Lath on LinkedIn"
+          >
             <span className="bannerIcon">
-              <FaLinkedinIn />
+              <FaLinkedinIn aria-hidden="true" />
             </span>
           </a>
         </div>

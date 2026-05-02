@@ -3,39 +3,61 @@ import React from "react";
 import { FaGlobe } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Image from "next/image";
-const ProjectsCard = ({ title, des, src, link }) => {
+
+const ProjectsCard = ({ title, des, src, link, stack = [], outcome }) => {
   return (
     <motion.div
-      initial={{ opacity: 0.4, y: 100 }}
+      initial={{ opacity: 0, y: 28, filter: "blur(6px)" }}
       viewport={{ once: true }}
-      transition={{ type: "spring", damping: 8, stiffness: 80, duration: 1 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      className="w-full p-4 xl:px-10 h-auto xl:py-10 rounded-3xl flex flex-col glass-card group hover:-translate-y-2 transition-all duration-100"
+      transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      className="premium-card project-card w-full p-4 xl:px-8 h-auto xl:py-8 rounded-lg flex flex-col group"
     >
-      <div className="w-full h-[220px] overflow-hidden rounded-2xl border border-white/10">
+      <div className="premium-card-line" aria-hidden="true" />
+      <div className="relative z-10 w-full h-[220px] overflow-hidden rounded-lg border border-white/10 project-media">
         <Image
-          className="w-full h-60 object-cover group-hover:scale-110 duration-300 cursor-pointer"
+          className="w-full h-60 object-cover group-hover:scale-[1.045] duration-500 cursor-pointer"
           src={src}
-          alt="Projects Image"
+          alt={`${title} project preview`}
+          sizes="(min-width: 1280px) 42vw, (min-width: 768px) 45vw, 100vw"
         />
       </div>
-      <div className="w-full mt-5 flex flex-col  gap-6">
+      <div className="relative z-10 w-full mt-5 flex flex-col gap-6">
         <div>
-          <div className="flex items-center justify-between">
-            <h3 className="text-base uppercase text-designColor font-normal">
+          <div className="flex items-start justify-between gap-4">
+            <h3 className="text-base uppercase text-designColor font-semibold leading-6">
               {title}
             </h3>
             <div className="flex gap-2">
-              <span className="text-lg w-10 h-10 rounded-full bg-white/10 inline-flex justify-center items-center text-white/70 hover:text-white duration-300 cursor-pointer border border-white/10">
-                <a href={link} target="_blank" rel="noopener noreferrer">
-                  <FaGlobe />
-                </a>
-              </span>
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Open ${title}`}
+                className="text-lg w-10 h-10 rounded-full bg-white/10 inline-flex justify-center items-center text-white/70 hover:text-white duration-300 cursor-pointer border border-white/10"
+              >
+                <FaGlobe aria-hidden="true" />
+              </a>
             </div>
           </div>
-          <p className="text-sm tracking-wide mt-3 hover:text-gray-100 duration-300 text-justify text-white/70">
+          {outcome && (
+            <p className="mt-3 text-sm font-semibold text-white">{outcome}</p>
+          )}
+          <p className="text-sm leading-7 tracking-wide mt-3 hover:text-gray-100 duration-300 text-white/70">
             {des}
           </p>
+          {stack.length > 0 && (
+            <div className="mt-5 flex flex-wrap gap-2">
+              {stack.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </motion.div>

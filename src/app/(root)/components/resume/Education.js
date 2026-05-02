@@ -9,15 +9,15 @@ const Education = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 0.5 } }}
-      className="w-full flex flex-col lgl:flex-row gap-10 lgl:gap-20"
+      className="w-full grid grid-cols-1 xl:grid-cols-2 gap-12 xl:gap-16"
     >
       {/* part one */}
-      <div>
+      <div className="resume-column">
         <div className="py-6 lgl:py-12 font-titleFont flex flex-col gap-4">
           <p className="text-sm text-designColor tracking-[4px]">2006 - 2024</p>
           <h2 className="text-3xl xl:text-4xl font-bold">Education</h2>
         </div>
-        <div className="mt-2 lgl:mt-6 w-full h-[1100px] border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">
+        <div className="resume-timeline">
           <ResumeCard
             title="B.tech Computer Science"
             subTitle="SAGE University, Indore ( 2020 - 2024 )"
@@ -34,34 +34,30 @@ const Education = () => {
             title="Primary to Secondary School"
             subTitle="Shri Balaji Vidya Mandir ( 2006 - 2018 )"
             result="8.5/10"
-            des="This 12 years of journey taught me many things from a kid to a sensible, knowledgable and responsible kind person with a dream."
+            des="This 12-year journey helped me grow into a responsible learner with strong communication, discipline, and curiosity."
           />
         </div>
       </div>
       {/* part Two */}
 
-      <div>
-        <div className="py-6 lgl:py-12 font-titleFont flex flex-col gap-4 w-1/2 mb-2 lgl:mb-6">
+      <div className="resume-column">
+        <div className="py-6 lgl:py-12 font-titleFont flex flex-col gap-4">
           <p className="text-sm text-designColor tracking-[4px]">2022 - 2026</p>
           <h2 className="text-3xl xl:text-4xl font-bold">Job Experience</h2>
         </div>
-        <div className="min-h-[350px] w-full border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">
+        <div className="resume-timeline">
           <JobResumeCard
             title="Software Developer"
             subTitle="Magure Inc. - ( November 2024 - Present )"
             result="Raipur, Chhattisgarh"
             des="At Magure, I work as a Full Stack Engineer, delivering scalable web and mobile solutions across frontend and backend systems. From building high-performance interfaces to developing backend services in .NET and optimizing production deployments, I take ownership of features end-to-end. I thrive in fast-paced Agile environments, collaborating closely with teams to ship reliable, user-focused products that align with business goals. My focus is on writing clean, efficient code and continuously evolving as a developer who builds with both speed and purpose."
           />
-        </div>
-        <div className="pt-6 lgl:pt-14 min-h-[350px] w-full border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">
           <JobResumeCard
             title="Website Developer"
             subTitle="DMAP INFOTECH - ( July 2023 - December 2023 )"
             result="Indore, Madhya Pradesh"
             des="At Dmap Infotech, I excelled as a Website Developer, creating interactive, responsive web applications using Next.js, React.js, Node.js, and MongoDB. My role involved optimizing performance, implementing secure authentication, and integrating Restful APIs. By leveraging Tailwind CSS and Shadcn UI, I delivered visually appealing and device-responsive designs. Collaborating with cross-functional teams, I enhanced user engagement and aligned projects with business goals. One highlight was developing advanced animations and interactive elements, resulting in dynamic user experiences."
           />
-        </div>
-        <div className="pt-6 lgl:pt-14 min-h-[350px] w-full border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">
           <JobResumeCard
             title="Digital Marketing Intern"
             subTitle="DIGITAL MIND WEB SOLUTION - ( June 2022 - January 2023 )"

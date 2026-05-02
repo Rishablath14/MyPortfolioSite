@@ -1,14 +1,14 @@
 import mongoose from "mongoose";
 
-const MONGODB_URI = process.env.MONGODB_URI;
-
-if (!MONGODB_URI) {
-  throw new Error("Please define the MONGODB_URI in .env.local");
-}
-
 let cached = global.mongoose || { conn: null, promise: null };
 
 export async function connectToDatabase() {
+  const MONGODB_URI = process.env.MONGODB_URI;
+
+  if (!MONGODB_URI) {
+    throw new Error("Please define the MONGODB_URI in .env.local");
+  }
+
   if (cached.conn) return cached.conn;
 
   if (!cached.promise) {

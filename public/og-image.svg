@@ -1,0 +1,16 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0B0F12"/>
+  <path d="M0 80H1200M0 200H1200M0 320H1200M0 440H1200M0 560H1200M120 0V630M300 0V630M480 0V630M660 0V630M840 0V630M1020 0V630" stroke="#1D2B34" stroke-width="1"/>
+  <rect x="72" y="72" width="1056" height="486" rx="8" fill="#0F151B" stroke="#2B3B45" stroke-width="2"/>
+  <path d="M72 156H1128" stroke="#23323B" stroke-width="2"/>
+  <circle cx="112" cy="114" r="10" fill="#FF6A3D"/>
+  <circle cx="148" cy="114" r="10" fill="#FFB457"/>
+  <circle cx="184" cy="114" r="10" fill="#57E6C8"/>
+  <text x="96" y="256" fill="#E7EDF5" font-family="Arial, Helvetica, sans-serif" font-size="74" font-weight="700">Rishab Lath</text>
+  <text x="98" y="324" fill="#FFB457" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Full Stack Software Developer</text>
+  <text x="98" y="386" fill="#A9B8C7" font-family="Arial, Helvetica, sans-serif" font-size="30">Fast, accessible, SEO-focused web products</text>
+  <text x="98" y="436" fill="#A9B8C7" font-family="Arial, Helvetica, sans-serif" font-size="30">Next.js · React · .NET · Node.js · UI/UX</text>
+  <rect x="786" y="232" width="256" height="190" rx="8" fill="#121C22" stroke="#30434F"/>
+  <path d="M820 292H1008M820 342H960M820 392H990" stroke="#57E6C8" stroke-width="12" stroke-linecap="round"/>
+  <path d="M786 456H1042" stroke="#FF6A3D" stroke-width="6" stroke-linecap="round"/>
+</svg>

@@ -1,49 +1,14 @@
-"use client";
-
-import React, { useEffect } from "react";
 import LeftBanner from "./LeftBanner";
-import RightBanner from "./RightBanner";
+import ModelStage from "./ModelStage";
+
 const Banner = () => {
-  const trackVisitor = async () => {
-    const ipResponse = await fetch("https://api.ipify.org?format=json");
-    const { ip } = await ipResponse.json();
-
-    const locResponse = await fetch(`https://ipapi.co/${ip}/json/`);
-    const locationData = await locResponse.json();
-    console.log(locationData);
-    const location = locationData.city + ", " + locationData.country;
-
-    const userAgent = navigator.userAgent;
-
-    const visitData = JSON.parse(localStorage.getItem("visitData"));
-    const oneHour = 60 * 60 * 1000;
-
-    if (!visitData || Date.now() - visitData.timestamp > oneHour) {
-      await fetch("api/visitor", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ ip, location, userAgent }),
-      });
-      localStorage.setItem(
-        "visitData",
-        JSON.stringify({ timestamp: Date.now() })
-      );
-    }
-  };
-
-  useEffect(() => {
-    trackVisitor();
-  }, []);
-
   return (
     <section
       id="home"
-      className="w-full pt-20 pb-24 flex flex-col gap-12 xl:gap-12 xl:flex-row items-center border-b border-white/10 font-titleFont relative"
+      className="w-full min-h-[calc(100vh-7rem)] pt-12 pb-20 flex flex-col gap-12 xl:flex-row items-center border-b border-white/10 font-titleFont relative"
     >
       <LeftBanner />
-      <RightBanner />
+      <ModelStage />
     </section>
   );
 };

@@ -2,21 +2,24 @@
 const nextConfig = {
     reactStrictMode: true,
     images: {
-      // Avoid Netlify sharp/IPX dependency for local static assets.
-      unoptimized: true,
+      formats: ["image/avif", "image/webp"],
     },
-    webpack: (config) => {
-        // Use webpack asset modules for .glb/.gltf files.
-        config.module.rules.push({
-          test: /\.(glb|gltf)$/,
-          type: "asset/resource",
-          generator: {
-            filename: "static/assets/[name].[hash][ext]",
-          },
-        });
-
-        return config;
-      },
+    async headers() {
+      return [
+        {
+          source: "/:path*",
+          headers: [
+            { key: "X-Content-Type-Options", value: "nosniff" },
+            { key: "X-Frame-Options", value: "DENY" },
+            { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+            {
+              key: "Permissions-Policy",
+              value: "camera=(), microphone=(), geolocation=()",
+            },
+          ],
+        },
+      ];
+    },
 };
 
 export default nextConfig;

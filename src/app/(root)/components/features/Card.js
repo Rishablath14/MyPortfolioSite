@@ -5,15 +5,17 @@ import { motion } from "framer-motion";
 const Card = ({ title, des, icon }) => {
   return (
     <motion.div
-      initial={{ scale: 0, opacity: 0, rotate: 60 }}
+      initial={{ y: 26, opacity: 0, filter: "blur(6px)" }}
       viewport={{ once: true }}
-      transition={{ type: "spring", damping: 12, stiffness: 50, duration: 0.5 }}
-      whileInView={{ scale: 1, opacity: 1, rotate: 0 }}
-      className="w-full px-10 h-80 py-10 rounded-3xl flex items-center glass-card group hover:-translate-y-2 transition-all duration-100"
+      transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+      whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+      className="service-card w-full px-6 md:px-8 min-h-72 py-8 rounded-lg flex items-center group"
     >
-      <div className="h-72 overflow-y-hidden">
-        <div className="flex h-full flex-col gap-10 translate-y-16 group-hover:translate-y-0 transition-transform duration-500">
-          <div className="w-10 h-8 flex flex-col justify-between">
+      <div className="service-card-shine" aria-hidden="true" />
+      <div className="service-card-corner" aria-hidden="true" />
+      <div className="relative z-10">
+        <div className="flex h-full flex-col gap-8">
+          <div className="service-icon w-12 h-12 flex items-center justify-center">
             {icon ? (
               <span className="text-5xl text-designColor">{icon}</span>
             ) : (
@@ -29,10 +31,13 @@ const Card = ({ title, des, icon }) => {
             <h2 className="text-xl md:text-2xl font-titleFont font-bold text-gray-300">
               {title}
             </h2>
-            <p className="base text-justify">{des}</p>
+            <p className="text-base leading-7 text-white/70">{des}</p>
           </div>
         </div>
       </div>
+      <span className="service-card-index" aria-hidden="true">
+        {title.slice(0, 2)}
+      </span>
     </motion.div>
   );
 };

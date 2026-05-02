@@ -1,20 +1,31 @@
 import { connectToDatabase } from "@/app/(root)/lib/mongodb";
 import Visitor from "@/app/(root)/models/visitor";
+import { createHash } from "crypto";
 
 export async function POST(request) {
   try {
+    if (process.env.ENABLE_VISITOR_TRACKING !== "true") {
+      return new Response(null, { status: 204 });
+    }
+
     const { ip, userAgent, location } = await request.json();
+    if (!ip || !userAgent || !location) {
+      return Response.json({ message: "Invalid visitor payload" }, { status: 400 });
+    }
     await connectToDatabase();
-    let visitor = await Visitor.findOne({ ip });
+    const visitorId = createHash("sha256")
+      .update(`${ip}:${process.env.VISITOR_HASH_SALT || "portfolio"}`)
+      .digest("hex");
+    let visitor = await Visitor.findOne({ ip: visitorId });
 
     if (visitor) {
       visitor.viewCount += 1;
       await visitor.save();
     } else {
       const newVisitor = new Visitor({
-        ip,
+        ip: visitorId,
         location,
-        userAgent,
+        userAgent: userAgent.slice(0, 180),
       });
       await newVisitor.save();
     }
@@ -26,16 +37,25 @@ export async function POST(request) {
   }
 }
 
-export async function GET() {
+export async function GET(request) {
   try {
+    const authHeader = request.headers.get("authorization");
+    const token = process.env.DASHBOARD_ACCESS_TOKEN;
+
+    if (!token || authHeader !== `Bearer ${token}`) {
+      return Response.json({ message: "Unauthorized" }, { status: 401 });
+    }
+
     await connectToDatabase();
-    const visitors = await Visitor.find();
+    const visitors = await Visitor.find().select("location viewCount createdAt updatedAt");
     const totalVisitors = visitors.length;
     const totalVisits = visitors.reduce(
       (sum, visitor) => sum + visitor.viewCount,
       0
     );
-    const topVisitor = await Visitor.findOne().sort({ viewCount: -1 });
+    const topVisitor = await Visitor.findOne()
+      .sort({ viewCount: -1 })
+      .select("location viewCount updatedAt");
     return Response.json(
       { visitors, totalVisitors, totalVisits, topVisitor },
       { status: 200 }

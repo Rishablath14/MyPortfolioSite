@@ -19,8 +19,8 @@ module.exports = {
         xl: "1280px",
       },
       fontFamily: {
-        bodyFont: ["Manrope", "sans-serif"],
-        titleFont: ["Syne", "sans-serif"],
+        bodyFont: ["var(--font-manrope)", "Manrope", "sans-serif"],
+        titleFont: ["var(--font-syne)", "Syne", "sans-serif"],
       },
       colors: {
         bodyColor: "#0e1216",

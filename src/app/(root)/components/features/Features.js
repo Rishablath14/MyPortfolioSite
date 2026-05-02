@@ -33,6 +33,8 @@ const Features = () => {
       >
         Services
       </motion.div>
+      <div className="services-orbit services-orbit-one" aria-hidden="true" />
+      <div className="services-orbit services-orbit-two" aria-hidden="true" />
       <Reveal>
         <Title title="Services" des="What I Do" />
       </Reveal>
@@ -40,42 +42,42 @@ const Features = () => {
         <Reveal delay={0.05}>
           <Card
             title="Web Development"
-            des="I can make attractive and eye catching SEO Optimized Website with user interactive nature and backend connectivity that helps to strength your digital presence like your Business, Services or about yourself."
+            des="High-performance websites and applications with clean architecture, accessible interfaces, strong Core Web Vitals, and backend integrations that support real business workflows."
             icon={<FaLaptopCode />}
           />
         </Reveal>
         <Reveal delay={0.1}>
           <Card
             title="SEO + SMM"
-            des="I can analyze and make result oriented audit reports to increase organic traffic and improve SERP rankings, and also plan high intent social media campaigns with engaging creatives to grow your online presence."
+            des="Technical SEO audits, semantic content structure, metadata strategy, and campaign-ready pages designed to improve crawlability, organic visibility, and conversion quality."
             icon={<FaSearchengin />}
           />
         </Reveal>
         <Reveal delay={0.15}>
           <Card
             title="Pay Per Click"
-            des=" I can create goal oriented PPC ads that helps to grow your business and increase your website traffic, sales and leads with the minimum CPC, high CTR and low ACOS."
+            des="Landing pages and campaign funnels built around clear intent, fast load times, persuasive copy, and measurable lead-generation goals."
             icon={<FaHandPointUp />}
           />
         </Reveal>
         <Reveal delay={0.2}>
           <Card
             title="Mobile App Services"
-            des="I can help you plan and build user friendly mobile app experiences with clear flows, responsive UI, and performance focused implementation tailored to your business goals."
+            des="Responsive product experiences with clear flows, polished interaction states, and device-specific layouts that feel natural across mobile, tablet, and desktop."
             icon={<FaMobileAlt />}
           />
         </Reveal>
         <Reveal delay={0.25}>
           <Card
             title="Java Programmer"
-            des="I can make Web app using java and its frameworks like JDBC,JSP and Servelet and also Connect to database using MySQL. You can also hire me for teaching Full Stack Java programming."
+            des="Java and backend fundamentals across JDBC, JSP, Servlets, REST APIs, database design, and full-stack teaching for practical software development."
             icon={<DiJava />}
           />
         </Reveal>
         <Reveal delay={0.3}>
           <Card
             title="Graphic Designing"
-            des="As a digital marketer I had developed my skills in creative designing too and I can make purpose driven and engaging design for any kind of situations, campaigns and business requirements."
+            des="Purpose-led visuals for product launches, campaigns, and brand communication, aligned with digital marketing goals instead of decoration alone."
             icon={<GiAbstract049 />}
           />
         </Reveal>

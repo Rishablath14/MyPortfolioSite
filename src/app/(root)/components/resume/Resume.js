@@ -15,33 +15,39 @@ const Resume = () => {
       <div className="flex justify-center items-center text-center">
         <Title title="Education, Experience & Skills" des="My Resume" />
       </div>
-      <div>
-        <ul className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
-          <li
+      <div className="resume-tab-shell">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-3" role="tablist" aria-label="Resume sections">
+          <button
+            type="button"
+            role="tab"
+            aria-selected={educationData}
             onClick={() =>
               setEducationData(true) &
               setSkillData(false) 
             }
             className={`${
               educationData
-                ? "border-designColor rounded-lg"
-                : "border-transparent"
-            } resumeLi`}
+                ? "resume-tab-active"
+                : ""
+            } resume-tab`}
           >
             Education
-          </li>
-          <li
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={skillData}
             onClick={() =>
               setEducationData(false) &
               setSkillData(true)
             }
             className={`${
-              skillData ? "border-designColor rounded-lg" : "border-transparent"
-            } resumeLi`}
+              skillData ? "resume-tab-active" : ""
+            } resume-tab`}
           >
             Professional Skills
-          </li>
-        </ul>
+          </button>
+        </div>
       </div>
       {educationData && <Education />}
       {skillData && <Skills />}

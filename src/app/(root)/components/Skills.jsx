@@ -30,11 +30,14 @@ import {
 
 const SkillsScroll = () => {
   return (
-    <section className="skills-scroll-container w-full py-12 md:py-20 border-b border-white/10 relative overflow-hidden">
+    <section className="skills-scroll-container w-full py-12 md:py-20 border-b border-white/10 relative overflow-hidden" aria-labelledby="technology-stack-title">
+      <h2 id="technology-stack-title" className="sr-only">
+        Technology stack
+      </h2>
       <div className="pointer-events-none absolute right-[-10%] top-4 text-[4.5rem] md:text-[7rem] font-titleFont font-bold text-white/5 tracking-[0.2em]">
         Stack
       </div>
-      <div className="w-full inline-flex flex-nowrap overflow-hidden">
+      <div className="skills-marquee-shell" aria-hidden="true">
         <ul className="flex items-center gap-20 md:gap-40 justify-center md:justify-start infinite-scroll">
           <li className="text-6xl md:text-8xl ml-20 md:ml-40">
             <TbBrandNextjs className="imgicon1" />
@@ -91,7 +94,7 @@ const SkillsScroll = () => {
           </li>
         </ul>
       </div>
-      <div className="w-full inline-flex flex-nowrap overflow-hidden my-12">
+      <div className="skills-marquee-shell my-6 md:my-8" aria-hidden="true">
         <ul className="flex items-center gap-20 md:gap-40 justify-center md:justify-start infinite-scroll2">
           <li className="text-6xl md:text-8xl  ml-20 md:ml-40">
             <FaBootstrap className="imgicon1" />
@@ -148,7 +151,7 @@ const SkillsScroll = () => {
           </li>
         </ul>
       </div>
-      <div className="w-full inline-flex flex-nowrap overflow-hidden">
+      <div className="skills-marquee-shell" aria-hidden="true">
         <ul className="flex items-center gap-20 md:gap-40 justify-center md:justify-start delay-100 infinite-scroll3">
           <li className="text-6xl md:text-8xl  ml-20 md:ml-40">
             <PiGitMergeBold className="imgicon1" />

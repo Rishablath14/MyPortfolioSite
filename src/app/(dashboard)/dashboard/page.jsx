@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import {
   BarChart,
@@ -17,27 +16,26 @@ import {
   Line,
 } from "recharts";
 
-const PASSWORD = process.env.NEXT_PUBLIC_DASHBOARD_PASSWORD;
 const COLORS = ["#6366f1", "#22c55e", "#facc15", "#f97316", "#06b6d4"];
 
 export default function Dashboard() {
-  const router = useRouter();
-  const [passwordInput, setPasswordInput] = useState("");
+  const [tokenInput, setTokenInput] = useState("");
   const [hasAccess, setHasAccess] = useState(false);
+  const [token, setToken] = useState("");
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const stored = localStorage.getItem("pass");
-    if (stored === PASSWORD) setHasAccess(true);
-  }, []);
 
   useEffect(() => {
     if (!hasAccess) return;
     const fetchData = async () => {
       setLoading(true);
       try {
-        const res = await fetch("/api/visitor");
+        const res = await fetch("/api/visitor", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        if (!res.ok) throw new Error("Unauthorized dashboard request");
         const result = await res.json();
         setData(result);
       } catch (err) {
@@ -47,15 +45,12 @@ export default function Dashboard() {
       }
     };
     fetchData();
-  }, [hasAccess]);
+  }, [hasAccess, token]);
 
   const handleLogin = () => {
-    if (passwordInput === PASSWORD) {
-      localStorage.setItem("pass", PASSWORD);
+    if (tokenInput.trim()) {
+      setToken(tokenInput.trim());
       setHasAccess(true);
-    } else {
-      alert("Incorrect password");
-      router.push("/");
     }
   };
 
@@ -93,14 +88,15 @@ export default function Dashboard() {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4">
         <h2 className="text-2xl font-semibold mb-4">
-          Enter Dashboard Password
+          Enter Dashboard Access Token
         </h2>
         <input
           type="password"
-          value={passwordInput}
-          onChange={(e) => setPasswordInput(e.target.value)}
+          value={tokenInput}
+          onChange={(e) => setTokenInput(e.target.value)}
           className="border border-gray-300 p-3 rounded mb-4 w-full max-w-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          placeholder="••••••••"
+          placeholder="Access token"
+          aria-label="Dashboard access token"
         />
         <button
           onClick={handleLogin}
@@ -137,8 +133,8 @@ export default function Dashboard() {
         <SummaryCard title="Total Visits" value={data.totalVisits} />
         <SummaryCard title="Unique Visitors" value={data.totalVisitors} />
         <SummaryCard
-          title="Top Visitor"
-          value={data.topVisitor?.ip}
+          title="Top Location"
+          value={data.topVisitor?.location || "No data"}
           subtitle={`Views: ${data.topVisitor?.viewCount}`}
         />
       </div>
@@ -206,13 +202,7 @@ export default function Dashboard() {
               className="bg-white p-4 rounded-lg shadow border border-gray-200 text-sm"
             >
               <p>
-                <strong>IP:</strong> {v.ip}
-              </p>
-              <p>
                 <strong>Location:</strong> {v.location}
-              </p>
-              <p>
-                <strong>User Agent:</strong> {v.userAgent}
               </p>
               <p>
                 <strong>First Visit:</strong>{" "}

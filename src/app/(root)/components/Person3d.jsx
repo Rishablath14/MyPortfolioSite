@@ -1,131 +1,103 @@
-import person from "@/app/assets/model2.glb";
-import personAnim from "@/app/assets/modelanim.glb";
-import personAnim2 from "@/app/assets/model2anim.glb";
-import personAnim1 from "@/app/assets/model1anim.glb";
-import personAnim4 from "@/app/assets/backflip.glb";
-import * as THREE from "three";
+"use client";
+
 import { useAnimations, useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { useEffect, useRef, useState, memo } from "react";
+import { memo, useEffect, useMemo, useRef, useState } from "react";
+import * as THREE from "three";
 
-const Person = memo(({ animation }) => {
+const person = "/models/model2.glb";
+const personAnim2 = "/models/model2anim.glb";
+const personAnim4 = "/models/backflip.glb";
+
+const animationUrls = {
+  wait: personAnim2,
+  backflip: personAnim4,
+};
+
+const Person = memo(function Person({ animation = "rest", compact = false }) {
   const personRef = useRef(null);
-  const media = window.matchMedia("(max-width: 480px)");
-  const { animations: animIdle } = useGLTF(personAnim);
-  const { animations: animPerma } = useGLTF(personAnim2);
-  const { animations: animDelta } = useGLTF(personAnim1);
-  const { animations: animFlip } = useGLTF(personAnim4);
-  const { animations: animD } = useGLTF(person);
-  const { scene } = useGLTF(person);
+  const headRef = useRef(null);
+  const [ready, setReady] = useState(false);
+  const target = useMemo(() => new THREE.Vector3(), []);
 
-  animIdle[0].name = "idle";
-  animPerma[0].name = "wait";
-  animDelta[0].name = "delta";
-  animD[0].name = "rest";
-  animFlip[0].name = "backflip";
+  const { scene, animations: restAnimations } = useGLTF(person);
+  const selectedUrl = animationUrls[animation] ?? person;
+  const { animations: selectedAnimations } = useGLTF(selectedUrl);
+
+  const restClip = restAnimations[0];
+  restClip.name = "rest";
+
+  const selectedClip = selectedAnimations[0];
+  if (selectedClip) selectedClip.name = animation;
+
   const { actions } = useAnimations(
-    [animIdle[0], animPerma[0], animDelta[0], animD[0], animFlip[0]],
+    selectedClip && animation !== "rest" ? [restClip, selectedClip] : [restClip],
     personRef,
   );
-  const [start, setStart] = useState(false);
+
+  useEffect(() => {
+    headRef.current = scene.getObjectByName("Head");
+    scene.traverse((child) => {
+      if (child.isMesh) {
+        child.castShadow = false;
+        child.receiveShadow = false;
+        child.frustumCulled = true;
+      }
+    });
+  }, [scene]);
 
   useFrame((state) => {
-    if (personRef.current && start && animation === "rest") {
-      let target = new THREE.Vector3(
-        state.pointer.x * 3,
-        state.pointer.y * 3,
-        1,
-      );
-      personRef.current.getObjectByName("Head").lookAt(target);
+    if (!ready || !headRef.current) return;
+
+    if (animation === "rest") {
+      target.set(state.pointer.x * 2.1, state.pointer.y * 1.55, 2.4);
+      headRef.current.lookAt(target);
     }
-    if (personRef.current && start && animation === "backflip") {
-      personRef.current.getObjectByName("Head").lookAt(state.camera.position);
+
+    if (animation === "backflip") {
+      headRef.current.lookAt(state.camera.position);
     }
   });
 
   useEffect(() => {
-    let idleAction,
-      permaAction,
-      deltaAction,
-      casualAction,
-      walkAction,
-      flipAction;
-
-    // Define all actions
-    idleAction = actions["idle"];
-    permaAction = actions["wait"];
-    deltaAction = actions["delta"];
-    casualAction = actions["rest"];
-    flipAction = actions["backflip"];
-
-    // Sequence the animations with proper timing
-    const time = setTimeout(() => {
-      setStart(true);
-    }, 2500);
-    const startAnimations = async () => {
-      if (idleAction) {
-        idleAction.reset().fadeIn(0.3).play();
-        idleAction.clampWhenFinished = true;
-        idleAction.loop = false;
-      }
-
-      await new Promise((resolve) => setTimeout(resolve, 1200));
-      if (idleAction) idleAction.fadeOut(0.3);
-      if (deltaAction) {
-        deltaAction.reset().fadeIn(0.3).play();
-        deltaAction.clampWhenFinished = true;
-        deltaAction.loop = false;
-      }
-
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      if (deltaAction) deltaAction.fadeOut(0.3);
-      if (casualAction) {
-        casualAction.reset().fadeIn(0.3).play();
-        casualAction.clampWhenFinished = true;
-        casualAction.loop = true;
-      }
-    };
-    startAnimations();
+    const restAction = actions.rest;
+    restAction?.reset().fadeIn(0.3).play();
+    if (restAction) restAction.loop = THREE.LoopRepeat;
+    setReady(true);
 
     return () => {
-      // Cleanup actions on unmount
-      clearTimeout(time);
-      idleAction?.fadeOut(0.3);
-      deltaAction?.fadeOut(0.3);
-      permaAction?.fadeOut(0.3);
-      casualAction?.fadeOut(0.3);
+      restAction?.fadeOut(0.2);
     };
-  }, []);
+  }, [actions]);
 
   useEffect(() => {
-    if (animation && start) {
-      actions[animation].reset().fadeIn(0.3).play();
-      actions[animation].clampWhenFinished = true;
-      actions[animation].loop = true;
-    }
+    if (!ready || animation === "rest" || !actions[animation]) return undefined;
+
+    actions.rest?.fadeOut(0.18);
+    const action = actions[animation];
+    action.reset().fadeIn(0.25).play();
+    action.loop = THREE.LoopRepeat;
+    action.paused = false;
+    action.enabled = true;
 
     return () => {
-      actions[animation].fadeOut(0.3);
+      action.fadeOut(0.25);
+      actions.rest?.reset().fadeIn(0.2).play();
     };
-  }, [animation]);
+  }, [actions, animation, ready]);
 
   return (
     <group ref={personRef}>
-      <mesh castShadow receiveShadow scale={media.matches ? 2.2 : 2.8}>
-        <primitive
-          object={scene}
-          position={media.matches ? [0, -1, 0] : [0, -0.9, 0]}
-          castShadow
-          receiveShadow
-        />
-      </mesh>
+      <primitive
+        object={scene}
+        scale={compact ? 1.28 : 1.58}
+        position={compact ? [0, -1, 0] : [0, -1.4, 0]}
+        rotation={[0, 0, 0]}
+      />
     </group>
   );
 });
+
 useGLTF.preload(person);
-useGLTF.preload(personAnim);
-useGLTF.preload(personAnim1);
-useGLTF.preload(personAnim2);
-useGLTF.preload(personAnim4);
 
 export default Person;

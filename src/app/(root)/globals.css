@@ -247,6 +247,11 @@
     background: linear-gradient(180deg, transparent, rgba(255, 180, 87, 0.48), transparent);
 }
 
+.performance-section {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 1200px;
+}
+
 .service-card {
     position: relative;
     overflow: hidden;
@@ -1011,9 +1016,18 @@ option{
     .model-stage::before,
     .model-halo::before,
     .model-halo::after,
+    .premium-card::before,
+    .premium-card-line,
+    .project-media::after,
     .service-card::before,
     .service-card-shine,
-    .service-card-corner {
+    .service-card-corner,
+    .section-watermark,
+    .ambient-rings,
+    .ambient-rings-secondary,
+    .kinetic-slice,
+    .kinetic-rule,
+    .services-orbit {
         display: none;
     }
 
@@ -1029,6 +1043,19 @@ option{
     .service-card:hover,
     .resume-card:hover {
         transform: none;
+    }
+
+    .premium-card,
+    .service-card,
+    .resume-card,
+    .contact-panel {
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+        transition: border-color 120ms ease, background 120ms ease;
+    }
+
+    .project-media img {
+        transform: none !important;
+        transition: none !important;
     }
 
     .service-card:hover .service-icon {
@@ -1090,27 +1117,6 @@ option{
 
     .model-caption {
         display: none;
-    }
-
-    .ambient-rings,
-    .ambient-rings-secondary,
-    .kinetic-rule,
-    .services-orbit {
-        display: none;
-    }
-
-    .kinetic-slice {
-        width: 5rem;
-    }
-
-    .kinetic-slice-one {
-        left: 0.75rem;
-        top: 7rem;
-    }
-
-    .kinetic-slice-two {
-        right: 0.75rem;
-        top: 24rem;
     }
 
 }

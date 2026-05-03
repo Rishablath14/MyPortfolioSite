@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React from "react";
 import {
   FaLaptopCode,
   FaSearchengin,
@@ -11,28 +11,18 @@ import { GiAbstract049 } from "react-icons/gi";
 import Title from "../layouts/Title";
 import Card from "./Card";
 import Reveal from "../motion/Reveal";
-import { motion, useScroll, useTransform } from "framer-motion";
 
 const Features = () => {
-  const sectionRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-  const y = useTransform(scrollYProgress, [0, 1], ["18%", "-12%"]);
-
   return (
     <section
       id="services"
-      ref={sectionRef}
       className="w-full py-20 border-b border-white/10 relative overflow-hidden"
     >
-      <motion.div
-        style={{ y }}
-        className="pointer-events-none absolute right-[-8%] top-[-10%] text-[6rem] md:text-[9rem] font-titleFont font-bold text-white/5 tracking-[0.2em]"
+      <div
+        className="section-watermark pointer-events-none absolute right-[-8%] top-[-10%] text-[6rem] md:text-[9rem] font-titleFont font-bold text-white/5 tracking-[0.2em]"
       >
         Services
-      </motion.div>
+      </div>
       <div className="services-orbit services-orbit-one" aria-hidden="true" />
       <div className="services-orbit services-orbit-two" aria-hidden="true" />
       <Reveal>

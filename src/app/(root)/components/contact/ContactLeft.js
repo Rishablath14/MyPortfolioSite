@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { contactImg } from "../../../assets/index";
 import Image from "next/image";
@@ -12,6 +12,7 @@ const ContactLeft = () => {
         src={contactImg}
         alt="Rishab Lath contact portrait"
         sizes="(min-width: 1024px) 35vw, 100vw"
+        quality={72}
       />
       <div className="relative z-10 flex flex-col gap-4">
         <h3 className="text-3xl font-bold text-white">Rishab Lath</h3>
@@ -77,4 +78,4 @@ const ContactLeft = () => {
   );
 };
 
-export default ContactLeft;
+export default memo(ContactLeft);

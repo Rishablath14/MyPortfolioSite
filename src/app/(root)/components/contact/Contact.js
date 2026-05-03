@@ -77,9 +77,9 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="w-full py-20 border-b border-white/10 relative overflow-hidden"
+      className="performance-section w-full py-20 border-b border-white/10 relative overflow-hidden"
     >
-      <div className="pointer-events-none absolute left-[-8%] top-6 text-[5rem] md:text-[8rem] font-titleFont font-bold text-white/5 tracking-[0.2em]">
+      <div className="section-watermark pointer-events-none absolute left-[-8%] top-6 text-[5rem] md:text-[8rem] font-titleFont font-bold text-white/5 tracking-[0.2em]">
         Contact
       </div>
       <div className="flex justify-center items-center text-center">

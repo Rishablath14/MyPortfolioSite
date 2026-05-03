@@ -40,9 +40,10 @@ export async function POST(request) {
 export async function GET(request) {
   try {
     const authHeader = request.headers.get("authorization");
-    const token = process.env.DASHBOARD_ACCESS_TOKEN;
+    const token = process.env.DASHBOARD_ACCESS_TOKEN?.trim();
+    const submittedToken = authHeader?.replace(/^Bearer\s+/i, "").trim();
 
-    if (!token || authHeader !== `Bearer ${token}`) {
+    if (!token || submittedToken !== token) {
       return Response.json({ message: "Unauthorized" }, { status: 401 });
     }
 

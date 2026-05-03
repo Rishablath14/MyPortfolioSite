@@ -1,18 +1,11 @@
 "use client";
 import React from "react";
 import { FaGlobe } from "react-icons/fa";
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 const ProjectsCard = ({ title, des, src, link, stack = [], outcome }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
-      whileInView={{ opacity: 1, y: 0 }}
-      className="premium-card project-card w-full p-4 xl:px-8 h-auto xl:py-8 rounded-lg flex flex-col group"
-    >
+    <div className="premium-card project-card w-full p-4 xl:px-8 h-auto xl:py-8 rounded-lg flex flex-col group">
       <div className="premium-card-line" aria-hidden="true" />
       <div className="relative z-10 w-full h-[220px] overflow-hidden rounded-lg border border-white/10 project-media">
         <Image
@@ -20,6 +13,7 @@ const ProjectsCard = ({ title, des, src, link, stack = [], outcome }) => {
           src={src}
           alt={`${title} project preview`}
           sizes="(min-width: 1280px) 42vw, (min-width: 768px) 45vw, 100vw"
+          quality={72}
         />
       </div>
       <div className="relative z-10 w-full mt-5 flex flex-col gap-6">
@@ -60,7 +54,7 @@ const ProjectsCard = ({ title, des, src, link, stack = [], outcome }) => {
           )}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

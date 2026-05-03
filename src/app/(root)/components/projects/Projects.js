@@ -1,5 +1,5 @@
 "use client";
-import React, { memo, useRef } from "react";
+import React, { memo } from "react";
 import Title from "../layouts/Title";
 import {
   projectOne,
@@ -13,28 +13,18 @@ import {
 } from "../../../assets/index";
 import ProjectsCard from "./ProjectsCard";
 import Reveal from "../motion/Reveal";
-import { motion, useScroll, useTransform } from "framer-motion";
 
 const Projects = memo(() => {
-  const sectionRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-  const y = useTransform(scrollYProgress, [0, 1], ["12%", "-18%"]);
-
   return (
     <section
       id="projects"
-      ref={sectionRef}
-      className="w-full py-20 border-b border-white/10 relative overflow-hidden"
+      className="performance-section w-full py-20 border-b border-white/10 relative overflow-hidden"
     >
-      <motion.div
-        style={{ y }}
-        className="pointer-events-none absolute left-[-6%] top-6 text-[5rem] md:text-[8rem] font-titleFont font-bold text-white/5 tracking-[0.18em]"
+      <div
+        className="section-watermark pointer-events-none absolute left-[-6%] top-6 text-[5rem] md:text-[8rem] font-titleFont font-bold text-white/5 tracking-[0.18em]"
       >
         Works
-      </motion.div>
+      </div>
       <div className="flex justify-center items-center text-center">
         <Reveal>
           <Title

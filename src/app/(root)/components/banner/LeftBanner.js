@@ -100,7 +100,7 @@ const LeftBanner = () => {
             My Resume
           </h2>
           <div className="flex gap-2">
-            <a href="/RishabLath_Resume_SDE.pdf" download aria-label="Download Rishab Lath resume PDF">
+            <a href="/Rishab_Lath_SDE_Res.pdf" download aria-label="Download Rishab Lath resume PDF">
               <span className="bannerIcon">
                 <FaCopy aria-hidden="true" />
               </span>

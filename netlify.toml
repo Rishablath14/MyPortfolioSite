@@ -6,3 +6,21 @@
 
 [functions]
   node_bundler = "esbuild"
+
+  [[redirects]]
+  from = "/"
+  to = "https://rishablath.me/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index.html"
+  to = "https://rishablath.me/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resume.html"
+  to = "https://rishablath.me/resume.html"
+  status = 301
+  force = true
